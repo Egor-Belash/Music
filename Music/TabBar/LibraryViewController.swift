@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LibraryViewController.swift
 //  Music
 //
 //  Created by Egor on 22.06.2026.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class LibraryViewController: UIViewController {
     
     // MARK: – Properties
     
@@ -24,7 +24,7 @@ final class ViewController: UIViewController {
     
     // MARK: – Layout
     private func setupViewProperties() {
-        view.backgroundColor = .systemGreen
+        view.backgroundColor = .systemCyan
     }
     
     private func setupSubviews() {
@@ -38,4 +38,3 @@ final class ViewController: UIViewController {
     }
     
 }
-
