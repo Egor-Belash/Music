@@ -129,9 +129,10 @@ final class PlayerViewController: UIViewController {
     }()
     
     private let pauseButton: UIButton = {
-        let button = UIButton(type: .system)
+        let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "pause.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 60)), for: .normal)
+        button.setImage(UIImage(systemName: "pause.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 75)), for: .normal)
+        button.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 75)), for: .selected)
         button.tintColor = .white
         return button
     }()
@@ -180,6 +181,9 @@ final class PlayerViewController: UIViewController {
         view.addSubview(songDurationLeftLabel)
         view.addSubview(songDurationRightLabel)
         
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        pauseButton.addTarget(self, action: #selector(pauseButtonTapped), for: .touchUpInside)
+        forwardButton.addTarget(self, action: #selector(forwardButtonTapped), for: .touchUpInside)
         buttonsStackView.addArrangedSubview(backButton)
         buttonsStackView.addArrangedSubview(pauseButton)
         buttonsStackView.addArrangedSubview(forwardButton)
@@ -235,7 +239,7 @@ final class PlayerViewController: UIViewController {
     }
     
     @objc private func pauseButtonTapped() {
-        
+        pauseButton.isSelected.toggle()
     }
     
     @objc private func forwardButtonTapped() {
