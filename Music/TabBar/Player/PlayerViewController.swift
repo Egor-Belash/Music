@@ -46,6 +46,7 @@ final class PlayerViewController: UIViewController {
         label.font = .systemFont(ofSize: 22, weight: .bold)
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.textColor = .white
         return label
     }()
     
@@ -56,6 +57,7 @@ final class PlayerViewController: UIViewController {
         label.font = .systemFont(ofSize: 18, weight: .medium)
         label.textAlignment = .left
         label.numberOfLines = 1
+        label.textColor = .systemGray5
         return label
     }()
     
@@ -79,6 +81,35 @@ final class PlayerViewController: UIViewController {
         stackView.distribution = .fillProportionally
         stackView.backgroundColor = .systemMint
         return stackView
+    }()
+    
+    private let songSlider: UISlider = {
+        let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.value = 0.6
+        return slider
+    }()
+    
+    private let songDurationLeftLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "0:00"
+        label.font = .systemFont(ofSize: 16, weight: .medium)
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.textColor = .systemGray5
+        return label
+    }()
+    
+    private let songDurationRightLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "0:00"
+        label.font = .systemFont(ofSize: 16, weight: .medium)
+        label.textAlignment = .right
+        label.numberOfLines = 1
+        label.textColor = .systemGray5
+        return label
     }()
     
     private let backButton: UIButton = {
@@ -116,13 +147,6 @@ final class PlayerViewController: UIViewController {
         return stackView
     }()
     
-    private let songSlider: UISlider = {
-        let slider = UISlider()
-        slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.value = 0.6
-        return slider
-    }()
-    
     // MARK: – Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,7 +158,7 @@ final class PlayerViewController: UIViewController {
     
     // MARK: – Layout
     private func setupViewProperties() {
-        view.backgroundColor = .systemGray5
+        view.backgroundColor = .systemOrange
     }
     
     private func setupSubviews() {
@@ -147,16 +171,20 @@ final class PlayerViewController: UIViewController {
         titleVStackView.addArrangedSubview(songTitleLabel)
         titleVStackView.addArrangedSubview(songArtistLabel)
         
-        view.addSubview(titleHStackView)
         titleHStackView.addArrangedSubview(albumImageView)
         titleHStackView.addArrangedSubview(titleVStackView)
+        view.addSubview(titleHStackView)
         
-        view.addSubview(buttonsStackView)
+        songSlider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+        view.addSubview(songSlider)
+        view.addSubview(songDurationLeftLabel)
+        view.addSubview(songDurationRightLabel)
+        
         buttonsStackView.addArrangedSubview(backButton)
         buttonsStackView.addArrangedSubview(pauseButton)
         buttonsStackView.addArrangedSubview(forwardButton)
+        view.addSubview(buttonsStackView)
         
-        view.addSubview(songSlider)
     }
     
     private func setupConstraints() {
@@ -186,13 +214,18 @@ final class PlayerViewController: UIViewController {
             
             songSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             songSlider.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            songSlider.bottomAnchor.constraint(equalTo: buttonsStackView.topAnchor, constant: -20),
-           
+            songSlider.bottomAnchor.constraint(equalTo: songDurationLeftLabel.topAnchor),
+            
+            songDurationLeftLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            songDurationLeftLabel.bottomAnchor.constraint(equalTo: buttonsStackView.topAnchor, constant: -15),
+            
+            songDurationRightLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            songDurationRightLabel.bottomAnchor.constraint(equalTo: buttonsStackView.topAnchor, constant: -15),
+            
             buttonsStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             buttonsStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
             buttonsStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             buttonsStackView.heightAnchor.constraint(equalToConstant: 100),
-            
         ])
     }
     
@@ -209,6 +242,10 @@ final class PlayerViewController: UIViewController {
         
     }
     
+    @objc private func sliderValueChanged(_ sender: UISlider) {
+        
+    }
+    
 }
 
 // MARK: – TopPlayerViewDelegate
@@ -216,6 +253,5 @@ extension PlayerViewController: TopPlayerViewDelegate {
     func didTapExitButton() {
         dismiss(animated: true)
     }
-    
     
 }
