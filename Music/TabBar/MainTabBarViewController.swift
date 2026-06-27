@@ -9,11 +9,21 @@ import UIKit
 
 final class MainTabBarViewController: UITabBarController {
     
+    // MARK: – Subviews
+    private let miniPlayerView: MiniPlayerView = {
+        let mini = MiniPlayerView()
+        mini.translatesAutoresizingMaskIntoConstraints = false
+        return mini
+    }()
+    
+    // MARK: – Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabs()
+        setupMiniPlayer()
     }
     
+    // MARK: – Layout
     private func setupTabs() {
         let homeVC = HomeViewController()
         let libraryVC = LibraryViewController()
@@ -41,5 +51,24 @@ final class MainTabBarViewController: UITabBarController {
         selectedIndex = 0
     }
     
+    private func setupMiniPlayer() {
+        view.addSubview(miniPlayerView)
+        NSLayoutConstraint.activate([
+            miniPlayerView.bottomAnchor.constraint(equalTo: tabBar.topAnchor),
+            miniPlayerView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            miniPlayerView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            miniPlayerView.heightAnchor.constraint(equalToConstant: 60),
+        ])
+        
+        miniPlayerView.delegate = self
+    }
+    
 }
 
+// MARK: – MiniPlayerViewDelegate
+extension MainTabBarViewController: MiniPlayerViewDelegate {
+    func miniPlayerViewDidTap() {
+        let vc = PlayerViewController()
+        present(vc, animated: true)
+    }
+}
