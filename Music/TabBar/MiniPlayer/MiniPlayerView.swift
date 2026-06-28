@@ -11,7 +11,7 @@ protocol MiniPlayerViewDelegate: AnyObject {
     func miniPlayerViewDidTap()
 }
 
-final class MiniPlayerView: UIView {
+final class MiniPlayerView: TouchView {
     
     // MARK: – Properties
     weak var delegate: MiniPlayerViewDelegate?
@@ -123,6 +123,10 @@ final class MiniPlayerView: UIView {
     private func setupGesture() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(miniPlayerTapped))
         addGestureRecognizer(tap)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(miniPlayerTapped))
+        swipeUp.direction = .up
+        addGestureRecognizer(swipeUp)
     }
     
     // MARK: – Actions
