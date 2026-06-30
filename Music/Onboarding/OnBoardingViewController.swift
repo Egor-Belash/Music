@@ -124,7 +124,7 @@ extension OnBoardingViewController: UICollectionViewDataSource {
 
 // MARK: – UICollectionViewDelegate
 extension OnBoardingViewController: UICollectionViewDelegate {
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {         // чтобы при скроле точки загорались
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let currentIndex = Int(scrollView.contentOffset.x / scrollView.frame.width)
         pageControl.currentPage = currentIndex
     }

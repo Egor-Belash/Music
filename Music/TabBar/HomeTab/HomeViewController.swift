@@ -1,0 +1,129 @@
+//
+//  HomeViewController.swift
+//  Music
+//
+//  Created by Egor on 22.06.2026.
+//
+
+import UIKit
+
+final class HomeViewController: UIViewController {
+    
+    // MARK: – Properties
+    private var playlists: [Playlist] = []
+    var presenter: HomePresenterProtocol?
+    
+    // MARK: – Subviews
+    private let layout: UICollectionViewLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        return layout
+    }()
+    
+    private lazy var collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsVerticalScrollIndicator = true
+        collectionView.backgroundColor = .clear
+        return collectionView
+    }()
+    
+    // MARK: – Lifecycles
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViewProperties()
+        setupSubviews()
+        setupConstraints()
+        
+        presenter?.viewDidLoad()
+    }
+    
+    // MARK: – Layout
+    private func setupViewProperties() {
+        view.backgroundColor = .systemMint
+    }
+    
+    private func setupSubviews() {
+        view.addSubview(collectionView)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(PlaylistCell.self, forCellWithReuseIdentifier: PlaylistCell.reuseIdentifier)
+        
+        navigationItem.title = "Home"
+        navigationItem.largeTitleDisplayMode = .always
+        
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+    }
+    
+}
+
+// MARK: – UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return playlists.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(
+            withReuseIdentifier: PlaylistCell.reuseIdentifier,
+            for: indexPath
+        ) as? PlaylistCell else {
+            return UICollectionViewCell()
+        }
+        
+        cell.configure(with: playlists[indexPath.row])
+        
+        return cell
+    }
+    
+}
+
+// MARK: – UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 400)
+    }
+
+}
+
+// MARK: –
+extension HomeViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let playlist = playlists[indexPath.row]
+        
+        presenter?.didTapPlaylist(playlist)
+    
+    }
+}
+
+// MARK: – HomeViewProtocol
+extension HomeViewController: HomeViewProtocol {
+    func showPlaylists(playlists: [Playlist]) {
+        self.playlists = playlists
+        collectionView.reloadData()
+        print(playlists)
+    }
+    
+    func showError(message: String) {
+        print("error")
+    }
+    
+    
+}

@@ -25,7 +25,7 @@ final class MainTabBarViewController: UITabBarController {
     
     // MARK: – Layout
     private func setupTabs() {
-        let homeVC = HomeViewController()
+        let homeVC = HomeRouter.build()
         let libraryVC = LibraryViewController()
         
         let homeVCNav = UINavigationController(rootViewController: homeVC)
