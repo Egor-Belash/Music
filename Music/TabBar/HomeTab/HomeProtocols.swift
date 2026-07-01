@@ -8,6 +8,8 @@
 protocol HomeViewProtocol: AnyObject {
     func showPlaylists(playlists: [Playlist])
     func showError(message: String)
+    func showLoading()
+    func hideLoading()
 }
 
 protocol HomePresenterProtocol: AnyObject {

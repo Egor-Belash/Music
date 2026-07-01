@@ -28,6 +28,20 @@ final class HomeViewController: UIViewController {
         return collectionView
     }()
     
+    private let loadingView: LoadingView = {
+        let view = LoadingView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
+    private let errorView: ErrorView = {
+        let view = ErrorView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
+        return view
+    }()
+    
     // MARK: – Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +63,10 @@ final class HomeViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(PlaylistCell.self, forCellWithReuseIdentifier: PlaylistCell.reuseIdentifier)
         
+        view.addSubview(loadingView)
+        view.addSubview(errorView)
+        errorView.delegate = self
+        
         navigationItem.title = "Home"
         navigationItem.largeTitleDisplayMode = .always
         
@@ -60,6 +78,14 @@ final class HomeViewController: UIViewController {
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            loadingView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            
+            errorView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -80),
+            errorView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            errorView.heightAnchor.constraint(equalTo: errorView.widthAnchor, multiplier: 0.43),
         ])
     }
     
@@ -115,6 +141,14 @@ extension HomeViewController: UICollectionViewDelegate {
 
 // MARK: – HomeViewProtocol
 extension HomeViewController: HomeViewProtocol {
+    func showLoading() {
+        loadingView.isHidden = false
+    }
+    
+    func hideLoading() {
+        loadingView.isHidden = true
+    }
+    
     func showPlaylists(playlists: [Playlist]) {
         self.playlists = playlists
         collectionView.reloadData()
@@ -122,8 +156,15 @@ extension HomeViewController: HomeViewProtocol {
     }
     
     func showError(message: String) {
-        print("error")
+        print(message)
+        errorView.isHidden = false
     }
     
-    
+}
+
+extension HomeViewController: ErrorViewDelegate {
+    func reloadButtonTapped() {
+        errorView.isHidden = true
+        presenter?.viewDidLoad()
+    }
 }

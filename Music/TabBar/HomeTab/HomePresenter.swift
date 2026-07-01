@@ -17,6 +17,7 @@ final class HomePresenter: HomePresenterProtocol {
     
     // MARK: – Functions
     func viewDidLoad() {
+        view?.showLoading()
         fetchPlaylists()
     }
     
@@ -28,6 +29,9 @@ final class HomePresenter: HomePresenterProtocol {
     func fetchPlaylists() {
         NetworkService.shared.fetchPlaylists { [weak self] result in
             DispatchQueue.main.async {
+                
+                self?.view?.hideLoading()
+                
                 switch result {
                 case .success(let playlists):
                     self?.playlists = playlists
