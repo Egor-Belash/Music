@@ -25,7 +25,7 @@ final class HomeRouter: HomeRouterProtocol {
     }
     
     func openPlaylist(_ playlist: Playlist) {
-        let vc = PlaylistViewController(playlist: playlist)
+        let vc = PlaylistRouter.build(with: playlist)
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     

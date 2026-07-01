@@ -43,6 +43,7 @@ final class PlaylistCell: UICollectionViewCell {
     }
     
     override func prepareForReuse() {
+        super.prepareForReuse()
         imageView.image = nil
         titleLabel.text = nil
     }
@@ -74,11 +75,7 @@ final class PlaylistCell: UICollectionViewCell {
     // MARK: – Actions
     func configure(with model: Playlist) {
         titleLabel.text = model.title
-        if let image = model.coverImage {
-            imageView.image = UIImage(named: image)
-        } else {
-            imageView.image = UIImage(systemName: "music.note")
-        }
+        imageView.setImage(with: model.coverImage)
     }
     
 }

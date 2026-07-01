@@ -11,9 +11,25 @@ final class PlaylistViewController: UIViewController {
     
     // MARK: – Properties
     private var playlist: Playlist
+    var presenter: PlaylistPresenterProtocol?
 
-    
     // MARK: – Subviews
+    private let playlistImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.contentMode = .scaleAspectFit
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .systemGray5
+        return imageView
+    }()
+    
+    private let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .darkColor2
+        return tableView
+    }()
     
     // MARK: – Lifecycles
     override func viewDidLoad() {
@@ -21,6 +37,8 @@ final class PlaylistViewController: UIViewController {
         setupViewProperties()
         setupSubviews()
         setupConstraints()
+        
+        presenter?.viewDidLoad()
     }
     
     // MARK: – INIT
@@ -39,13 +57,67 @@ final class PlaylistViewController: UIViewController {
     }
     
     private func setupSubviews() {
+        view.addSubview(playlistImageView)
         
+        view.addSubview(tableView)
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(PlaylistTableCell.self, forCellReuseIdentifier: PlaylistTableCell.reuseIdentifier)
     }
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            playlistImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            playlistImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            playlistImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            playlistImageView.heightAnchor.constraint(equalTo: playlistImageView.widthAnchor, multiplier: 1),
             
+            tableView.topAnchor.constraint(equalTo: playlistImageView.bottomAnchor, constant: 20),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+    }
+    
+}
+
+// MARK: – UITableViewDataSource
+extension PlaylistViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        playlist.tracks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: PlaylistTableCell.reuseIdentifier,
+            for: indexPath
+        ) as? PlaylistTableCell else {
+            return UITableViewCell()
+        }
+        
+        cell.configure(with: playlist.tracks[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70
+    }
+    
+}
+
+// MARK: – UITableViewDelegate
+extension PlaylistViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension PlaylistViewController: PlaylistViewProtocol {
+    func showPlaylist(playlist: Playlist) {
+        self.playlist = playlist
+        
+        playlistImageView.setImage(with: playlist.coverImage)
     }
     
 }

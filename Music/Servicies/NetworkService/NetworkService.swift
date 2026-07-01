@@ -58,9 +58,9 @@ final class NetworkService {
                             id: "1",
                             title: "Bangaranga",
                             artist: "DARA",
-                            coverImage: nil,
+                            coverImage: "bangarangaImage",
                             albumCover: nil,
-                            songName: nil
+                            songFileName: nil
                         ),
                         Track(
                             id: "2",
@@ -68,7 +68,7 @@ final class NetworkService {
                             artist: "Noam Bettan",
                             coverImage: nil,
                             albumCover: nil,
-                            songName: nil
+                            songFileName: nil
                         ),
                         
                     ]
@@ -84,7 +84,7 @@ final class NetworkService {
                             artist: "",
                             coverImage: "",
                             albumCover: "",
-                            songName: ""
+                            songFileName: ""
                         )
                     ]
                 )

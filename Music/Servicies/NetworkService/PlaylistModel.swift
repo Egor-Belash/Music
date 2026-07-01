@@ -18,5 +18,5 @@ struct Track: Codable {
     let artist: String?
     let coverImage: String?
     let albumCover: String?
-    let songName: String?
+    let songFileName: String?
 }
