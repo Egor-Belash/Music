@@ -1,0 +1,40 @@
+[
+  {
+    "id": "1",
+    "title": "Eurovision 2026",
+    "coverImage": "eurovision-playlist-cover",
+    "tracks": [
+      {
+        "id": "1",
+        "title": "Bangaranga",
+        "artist": "DARA",
+        "coverImage": "bangarangaImage",
+        "albumCover": null,
+        "songFileName": null
+      },
+      {
+        "id": "2",
+        "title": "Michelle",
+        "artist": "Noam Bettan",
+        "coverImage": null,
+        "albumCover": null,
+        "songFileName": null
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "jdajdd",
+    "coverImage": null,
+    "tracks": [
+      {
+        "id": "1234",
+        "title": "",
+        "artist": "",
+        "coverImage": "",
+        "albumCover": "",
+        "songFileName": ""
+      }
+    ]
+  }
+]

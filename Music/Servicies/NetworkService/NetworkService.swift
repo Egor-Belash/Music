@@ -48,54 +48,21 @@ final class NetworkService {
     func fetchPlaylists(completion: @escaping (Result<[Playlist], NetworkError>) -> Void) {
         
         DispatchQueue.global().asyncAfter(deadline: .now() + 1) {
-            let playlists = [
-                Playlist(
-                    id: "1",
-                    title: "Eurovision 2026",
-                    coverImage: "eurovision-playlist-cover",
-                    tracks: [
-                        Track(
-                            id: "1",
-                            title: "Bangaranga",
-                            artist: "DARA",
-                            coverImage: "bangarangaImage",
-                            albumCover: nil,
-                            songFileName: nil
-                        ),
-                        Track(
-                            id: "2",
-                            title: "Michelle",
-                            artist: "Noam Bettan",
-                            coverImage: nil,
-                            albumCover: nil,
-                            songFileName: nil
-                        ),
-                        
-                    ]
-                ),
-                Playlist(
-                    id: "2",
-                    title: "jdajdd",
-                    coverImage: nil,
-                    tracks: [
-                        Track(
-                            id: "1234",
-                            title: "",
-                            artist: "",
-                            coverImage: "",
-                            albumCover: "",
-                            songFileName: ""
-                        )
-                    ]
-                )
-            ]
             
-            DispatchQueue.main.async {
-                completion(.success(playlists))
+            guard let url = Bundle.main.url(forResource: "playlists", withExtension: "json") else {
+                completion(.failure(.invalidURL))
+                return
             }
-            
+                        
+            do {
+                let data = try Data(contentsOf: url)
+                
+                let decoder = JSONDecoder()
+                let playlists = try decoder.decode([Playlist].self, from: data)
+                completion(.success(playlists))
+            } catch {
+                completion(.failure(.decodingError(error)))
+            }
         }
-        
     }
-
 }
