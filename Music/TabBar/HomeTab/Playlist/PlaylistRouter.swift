@@ -12,7 +12,7 @@ final class PlaylistRouter: PlaylistRouterProtocol {
     weak var viewController: UIViewController?
     
     static func build(with playlist: Playlist) -> UIViewController {
-        let vc = PlaylistViewController(playlist: playlist)
+        let vc = PlaylistViewController()
         let presenter = PlaylistPresenter(playlist: playlist)
         let router = PlaylistRouter()
         

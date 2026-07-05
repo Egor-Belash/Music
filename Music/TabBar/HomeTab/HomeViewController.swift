@@ -128,7 +128,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 
 }
 
-// MARK: –
+// MARK: – UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -152,7 +152,6 @@ extension HomeViewController: HomeViewProtocol {
     func showPlaylists(playlists: [Playlist]) {
         self.playlists = playlists
         collectionView.reloadData()
-        print(playlists)
     }
     
     func showError(message: String) {

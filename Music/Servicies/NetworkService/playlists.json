@@ -10,23 +10,23 @@
         "artist": "DARA",
         "coverImage": "bangarangaImage",
         "albumCover": null,
-        "songFileName": null
+        "songFileName": "DaraBangaranga"
       },
       {
         "id": "2",
         "title": "Michelle",
         "artist": "Noam Bettan",
-        "coverImage": null,
+        "coverImage": "michelleImage",
         "albumCover": null,
-        "songFileName": null
+        "songFileName": "NoamBettanMichelle"
       },
       {
           "id": "3",
           "title": "Choke me",
           "artist": "Alexandra Capitanescu",
-          "coverImage": null,
+          "coverImage": "chokeMeImage",
           "albumCover": null,
-          "songFileName": null
+          "songFileName": "AlexandraCapitanescuChokeMe"
       },
     ]
   },

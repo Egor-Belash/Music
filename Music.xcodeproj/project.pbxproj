@@ -8,10 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		744898722FE9A7F500CDED6D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 744898712FE9A7F500CDED6D /* Lottie */; };
+		747342D72FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 747342D62FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 */; };
+		74CCD2372FF91CF90005C0C6 /* DaraBangaranga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */; };
+		74CCD2652FF983C60005C0C6 /* NoamBettanMichelle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		744897D42FE9A62D00CDED6D /* Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Music.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		747342D62FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlexandraCapitanescuChokeMe.mp3; sourceTree = "<group>"; };
+		74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DaraBangaranga.mp3; sourceTree = "<group>"; };
+		74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NoamBettanMichelle.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -50,6 +56,7 @@
 		744897CB2FE9A62D00CDED6D = {
 			isa = PBXGroup;
 			children = (
+				74CCD2352FF91CCF0005C0C6 /* Songs */,
 				744897D62FE9A62D00CDED6D /* Music */,
 				744897D52FE9A62D00CDED6D /* Products */,
 			);
@@ -61,6 +68,16 @@
 				744897D42FE9A62D00CDED6D /* Music.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		74CCD2352FF91CCF0005C0C6 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */,
+				74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */,
+				747342D62FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 */,
+			);
+			path = Songs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +148,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74CCD2652FF983C60005C0C6 /* NoamBettanMichelle.mp3 in Resources */,
+				74CCD2372FF91CF90005C0C6 /* DaraBangaranga.mp3 in Resources */,
+				747342D72FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

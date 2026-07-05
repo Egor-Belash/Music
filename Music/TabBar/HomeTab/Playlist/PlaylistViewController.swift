@@ -10,7 +10,7 @@ import UIKit
 final class PlaylistViewController: UIViewController {
     
     // MARK: – Properties
-    private var playlist: Playlist
+    private var playlist: Playlist?
     var presenter: PlaylistPresenterProtocol?
 
     // MARK: – Subviews
@@ -42,9 +42,8 @@ final class PlaylistViewController: UIViewController {
     }
     
     // MARK: – INIT
-    init(playlist: Playlist) {
-        self.playlist = playlist
-        super.init(nibName: nil, bundle: nil)
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder: NSCoder) {
@@ -84,7 +83,7 @@ final class PlaylistViewController: UIViewController {
 // MARK: – UITableViewDataSource
 extension PlaylistViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        playlist.tracks.count
+        playlist?.tracks.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,7 +94,11 @@ extension PlaylistViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(with: playlist.tracks[indexPath.row])
+        guard let track = playlist?.tracks[indexPath.row] else {
+            return UITableViewCell()
+        }
+        
+        cell.configure(with: track)
         
         return cell
     }
@@ -110,6 +113,8 @@ extension PlaylistViewController: UITableViewDataSource {
 extension PlaylistViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        presenter?.didTapSong(index: indexPath.row)
     }
 }
 

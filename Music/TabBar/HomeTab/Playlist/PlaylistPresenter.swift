@@ -24,5 +24,9 @@ final class PlaylistPresenter: PlaylistPresenterProtocol {
         view?.showPlaylist(playlist: playlist)
     }
     
+    func didTapSong(index: Int) {
+        AudioPlayerManager.shared.play(playlist: playlist, startIndex: index)
+    }
+    
     
 }

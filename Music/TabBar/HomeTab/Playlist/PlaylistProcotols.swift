@@ -11,6 +11,7 @@ protocol PlaylistViewProtocol: AnyObject {
 
 protocol PlaylistPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func didTapSong(index: Int)
 }
 
 protocol PlaylistRouterProtocol: AnyObject {

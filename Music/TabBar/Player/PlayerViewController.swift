@@ -10,6 +10,7 @@ import UIKit
 final class PlayerViewController: UIViewController {
     
     // MARK: – Properties
+    var presenter: PlayerPresenterProtocol?
     
     // MARK: – Subviews
     private let topBar: TopPlayerView = {
@@ -144,7 +145,6 @@ final class PlayerViewController: UIViewController {
         stackView.spacing = 20
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
-        stackView.backgroundColor = .blue
         return stackView
     }()
     
@@ -154,7 +154,12 @@ final class PlayerViewController: UIViewController {
         setupViewProperties()
         setupSubviews()
         setupConstraints()
-        
+        setupNotifications()
+        updateUI()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: – Layout
@@ -203,8 +208,8 @@ final class PlayerViewController: UIViewController {
             centeringGuide.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             centeringGuide.bottomAnchor.constraint(equalTo: titleHStackView.topAnchor),
             
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 40),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -40),
             imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1.0),
             imageView.centerYAnchor.constraint(equalTo: centeringGuide.centerYAnchor),
             
@@ -233,21 +238,42 @@ final class PlayerViewController: UIViewController {
         ])
     }
     
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(trackChanged), name: .playerTrackChanged, object: nil)
+    }
+    
+    private func updateUI() {
+        guard let track = AudioPlayerManager.shared.currentTrack else { return }
+        
+        imageView.setImage(with: track.coverImage)
+        songTitleLabel.text = track.title
+        songArtistLabel.text = track.artist
+    }
+
     // MARK: – Actions
     @objc private func backButtonTapped() {
-        
+        presenter?.playPrevious()
     }
     
     @objc private func pauseButtonTapped() {
         pauseButton.isSelected.toggle()
+        presenter?.pause()
     }
     
     @objc private func forwardButtonTapped() {
-        
+        presenter?.playNext()
     }
     
     @objc private func sliderValueChanged(_ sender: UISlider) {
         
+    }
+    
+    @objc private func trackChanged(_ notification: Notification) {
+        guard let track = notification.object as? Track else { return }
+
+        imageView.setImage(with: track.coverImage)
+        songTitleLabel.text = track.title
+        songArtistLabel.text = track.artist
     }
     
 }
@@ -257,5 +283,10 @@ extension PlayerViewController: TopPlayerViewDelegate {
     func didTapExitButton() {
         dismiss(animated: true)
     }
+    
+}
+
+// MARK: – PlayerViewProtocol
+extension PlayerViewController: PlayerViewProtocol {
     
 }

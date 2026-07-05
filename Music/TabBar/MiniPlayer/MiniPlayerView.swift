@@ -24,6 +24,7 @@ final class MiniPlayerView: TouchView {
         view.layer.cornerRadius = 10
         view.layer.borderColor = UIColor.white.cgColor
         view.backgroundColor = .brown
+        view.clipsToBounds = true
         return view
     }()
     
@@ -53,7 +54,7 @@ final class MiniPlayerView: TouchView {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
-        stackView.spacing = 5
+        stackView.spacing = 0
         stackView.alignment = .leading
         stackView.distribution = .fillEqually
         return stackView
@@ -85,6 +86,7 @@ final class MiniPlayerView: TouchView {
         setupSubviews()
         setupConstraints()
         setupGesture()
+        setupNotifications()
     }
     
     required init?(coder: NSCoder) {
@@ -129,6 +131,10 @@ final class MiniPlayerView: TouchView {
         addGestureRecognizer(swipeUp)
     }
     
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(trackChanged), name: .playerTrackChanged, object: nil)
+    }
+    
     // MARK: – Actions
     @objc private func pauseButtonTapped() {
         pauseButton.isSelected.toggle()
@@ -136,6 +142,14 @@ final class MiniPlayerView: TouchView {
     
     @objc private func miniPlayerTapped() {
         delegate?.miniPlayerViewDidTap()
+    }
+    
+    @objc private func trackChanged(_ notification: Notification) {
+        guard let track = notification.object as? Track else { return }
+
+        songImageView.setImage(with: track.coverImage)
+        songTitleLabel.text = track.title
+        songArtistLabel.text = track.artist
     }
     
 }

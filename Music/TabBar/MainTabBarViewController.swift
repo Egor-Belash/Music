@@ -68,7 +68,7 @@ final class MainTabBarViewController: UITabBarController {
 // MARK: – MiniPlayerViewDelegate
 extension MainTabBarViewController: MiniPlayerViewDelegate {
     func miniPlayerViewDidTap() {
-        let vc = PlayerViewController()
+        let vc = PlayerRouter.build()
         present(vc, animated: true)
     }
 }
