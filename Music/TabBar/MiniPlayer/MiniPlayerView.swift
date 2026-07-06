@@ -9,6 +9,7 @@ import UIKit
 
 protocol MiniPlayerViewDelegate: AnyObject {
     func miniPlayerViewDidTap()
+    func pauseButtonTapped()
 }
 
 final class MiniPlayerView: TouchView {
@@ -63,8 +64,8 @@ final class MiniPlayerView: TouchView {
     private let pauseButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "pause.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)), for: .normal)
-        button.setImage(UIImage(systemName: "play.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)), for: .selected)
+        button.setImage(UIImage(systemName: "play.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)), for: .normal)
+        button.setImage(UIImage(systemName: "pause.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30)), for: .selected)
         button.tintColor = .white
         return button
     }()
@@ -133,11 +134,13 @@ final class MiniPlayerView: TouchView {
     
     private func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(trackChanged), name: .playerTrackChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stateChanged), name: .playerStateChanged, object: nil)
     }
     
     // MARK: – Actions
     @objc private func pauseButtonTapped() {
-        pauseButton.isSelected.toggle()
+        delegate?.pauseButtonTapped()
+        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
     }
     
     @objc private func miniPlayerTapped() {
@@ -152,4 +155,7 @@ final class MiniPlayerView: TouchView {
         songArtistLabel.text = track.artist
     }
     
+    @objc private func stateChanged() {
+        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
+    }
 }

@@ -132,8 +132,8 @@ final class PlayerViewController: UIViewController {
     private let pauseButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "pause.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 75)), for: .normal)
-        button.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 75)), for: .selected)
+        button.setImage(UIImage(systemName: "play.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 75)), for: .normal)
+        button.setImage(UIImage(systemName: "pause.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 75)), for: .selected)
         button.tintColor = .white
         return button
     }()
@@ -240,6 +240,7 @@ final class PlayerViewController: UIViewController {
     
     private func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(trackChanged), name: .playerTrackChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(stateChanged), name: .playerStateChanged, object: nil)
     }
     
     private func updateUI() {
@@ -248,6 +249,7 @@ final class PlayerViewController: UIViewController {
         imageView.setImage(with: track.coverImage)
         songTitleLabel.text = track.title
         songArtistLabel.text = track.artist
+        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
     }
 
     // MARK: – Actions
@@ -256,8 +258,8 @@ final class PlayerViewController: UIViewController {
     }
     
     @objc private func pauseButtonTapped() {
-        pauseButton.isSelected.toggle()
         presenter?.pause()
+        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
     }
     
     @objc private func forwardButtonTapped() {
@@ -276,6 +278,9 @@ final class PlayerViewController: UIViewController {
         songArtistLabel.text = track.artist
     }
     
+    @objc private func stateChanged() {
+        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
+    }
 }
 
 // MARK: – TopPlayerViewDelegate
@@ -283,7 +288,6 @@ extension PlayerViewController: TopPlayerViewDelegate {
     func didTapExitButton() {
         dismiss(animated: true)
     }
-    
 }
 
 // MARK: – PlayerViewProtocol

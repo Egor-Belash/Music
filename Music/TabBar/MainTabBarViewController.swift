@@ -67,6 +67,10 @@ final class MainTabBarViewController: UITabBarController {
 
 // MARK: – MiniPlayerViewDelegate
 extension MainTabBarViewController: MiniPlayerViewDelegate {
+    func pauseButtonTapped() {
+        AudioPlayerManager.shared.pause()
+    }
+    
     func miniPlayerViewDidTap() {
         let vc = PlayerRouter.build()
         present(vc, animated: true)

@@ -21,6 +21,7 @@ final class AudioPlayerManager: NSObject {
               currentPlaylist.tracks.indices.contains(currentIndex) else { return nil }
         return currentPlaylist.tracks[currentIndex]
     }
+    private(set) var isPlaying = false
 
     // MARK: – Setup Player
     private func setupPlayer(with song: String) {
@@ -47,6 +48,7 @@ final class AudioPlayerManager: NSObject {
         playTrack()
         
         NotificationCenter.default.post(name: .playerTrackChanged, object: currentTrack)
+        sendIsPlayingState(with: true)
     }
     
     func next() {
@@ -63,14 +65,19 @@ final class AudioPlayerManager: NSObject {
             currentIndex = currentPlaylist.tracks.count - 1
             playTrack()
         }
+        
         NotificationCenter.default.post(name: .playerTrackChanged, object: currentTrack)
+        
+        sendIsPlayingState(with: true)
     }
     
     func pause() {
         guard let player else { return }
         if player.isPlaying {
+            sendIsPlayingState(with: false)
             player.pause()
         } else {
+            sendIsPlayingState(with: true)
             player.play()
         }
     }
@@ -93,11 +100,20 @@ final class AudioPlayerManager: NSObject {
             currentIndex = 0
             playTrack()
         }
+        
         NotificationCenter.default.post(name: .playerTrackChanged, object: currentTrack)
+        
+        sendIsPlayingState(with: true)
+    }
+    
+    private func sendIsPlayingState(with isPlaying: Bool) {
+        self.isPlaying = isPlaying
+        NotificationCenter.default.post(name: .playerStateChanged, object: nil)
     }
 
 }
 
+// MARK: – AVAudioPlayerDelegate
 extension AudioPlayerManager: AVAudioPlayerDelegate {
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         playNextTrack()
