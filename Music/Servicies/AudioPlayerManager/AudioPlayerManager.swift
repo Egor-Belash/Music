@@ -22,6 +22,12 @@ final class AudioPlayerManager: NSObject {
         return currentPlaylist.tracks[currentIndex]
     }
     private(set) var isPlaying = false
+    var currentTime: TimeInterval {
+        player?.currentTime ?? 0
+    }
+    var duration: TimeInterval {
+        player?.duration ?? 0
+    }
 
     // MARK: – Setup Player
     private func setupPlayer(with song: String) {
@@ -80,6 +86,10 @@ final class AudioPlayerManager: NSObject {
             sendIsPlayingState(with: true)
             player.play()
         }
+    }
+    
+    func seek(to time: TimeInterval) {
+        player?.currentTime = time
     }
     
     // MARK: – Privates

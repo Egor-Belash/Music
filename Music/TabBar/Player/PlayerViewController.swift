@@ -11,7 +11,8 @@ final class PlayerViewController: UIViewController {
     
     // MARK: – Properties
     var presenter: PlayerPresenterProtocol?
-    
+    private var timer: Timer?
+
     // MARK: – Subviews
     private let topBar: TopPlayerView = {
         let topBar = TopPlayerView()
@@ -87,7 +88,8 @@ final class PlayerViewController: UIViewController {
     private let songSlider: UISlider = {
         let slider = UISlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
-        slider.value = 0.6
+        slider.minimumValue = 0
+        slider.sliderStyle = .thumbless
         return slider
     }()
     
@@ -160,6 +162,7 @@ final class PlayerViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+        timer?.invalidate()
     }
     
     // MARK: – Layout
@@ -238,6 +241,7 @@ final class PlayerViewController: UIViewController {
         ])
     }
     
+    // MARK: – UI Updating
     private func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(trackChanged), name: .playerTrackChanged, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stateChanged), name: .playerStateChanged, object: nil)
@@ -250,6 +254,31 @@ final class PlayerViewController: UIViewController {
         songTitleLabel.text = track.title
         songArtistLabel.text = track.artist
         pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
+        
+        startTimer()
+        updateDurationLabel()
+        updateSlider()
+    }
+    
+    private func startTimer() {
+        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { [weak self] _ in
+            self?.updateDurationLabel()
+            self?.updateSlider()
+        }
+    }
+    
+    private func updateDurationLabel() {
+        let currentTime = AudioPlayerManager.shared.currentTime
+        let duration = AudioPlayerManager.shared.duration
+        
+        songDurationLeftLabel.text = String(format: "%d:%02d", Int(currentTime) / 60, Int(currentTime) % 60)
+        songDurationRightLabel.text = String(format: "%d:%02d", Int(duration) / 60, Int(duration) % 60)
+    }
+    
+    private func updateSlider() {
+        songSlider.minimumValue = 0
+        songSlider.maximumValue = Float(AudioPlayerManager.shared.duration)
+        songSlider.value = Float(AudioPlayerManager.shared.currentTime)
     }
 
     // MARK: – Actions
@@ -267,7 +296,7 @@ final class PlayerViewController: UIViewController {
     }
     
     @objc private func sliderValueChanged(_ sender: UISlider) {
-        
+        AudioPlayerManager.shared.seek(to: TimeInterval(sender.value))
     }
     
     @objc private func trackChanged(_ notification: Notification) {
