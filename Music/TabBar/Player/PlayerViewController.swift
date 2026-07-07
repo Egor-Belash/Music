@@ -63,6 +63,15 @@ final class PlayerViewController: UIViewController {
         return label
     }()
     
+    private let likeButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "plus.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 35)), for: .normal)
+        button.setImage(UIImage(systemName: "checkmark.circle", withConfiguration: UIImage.SymbolConfiguration(pointSize: 35)), for: .selected)
+        button.tintColor = .white
+        return button
+    }()
+    
     private let titleVStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,7 +79,7 @@ final class PlayerViewController: UIViewController {
         stackView.spacing = 5
         stackView.alignment = .leading
         stackView.distribution = .fillEqually
-        stackView.backgroundColor = .systemMint
+        stackView.backgroundColor = .systemBlue
         return stackView
     }()
     
@@ -80,7 +89,7 @@ final class PlayerViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         stackView.backgroundColor = .systemMint
         return stackView
     }()
@@ -182,6 +191,7 @@ final class PlayerViewController: UIViewController {
         
         titleHStackView.addArrangedSubview(albumImageView)
         titleHStackView.addArrangedSubview(titleVStackView)
+        titleHStackView.addArrangedSubview(likeButton)
         view.addSubview(titleHStackView)
         
         songSlider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
@@ -189,6 +199,7 @@ final class PlayerViewController: UIViewController {
         view.addSubview(songDurationLeftLabel)
         view.addSubview(songDurationRightLabel)
         
+        likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         pauseButton.addTarget(self, action: #selector(pauseButtonTapped), for: .touchUpInside)
         forwardButton.addTarget(self, action: #selector(forwardButtonTapped), for: .touchUpInside)
@@ -282,6 +293,21 @@ final class PlayerViewController: UIViewController {
     }
 
     // MARK: – Actions
+    @objc private func likeButtonTapped() {
+        likeButton.isSelected.toggle()
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.impactOccurred()
+        
+        UIView.animate(withDuration: 0.2) {
+            if self.likeButton.isSelected {
+                self.likeButton.tintColor = .greenColor2
+            } else {
+                self.likeButton.tintColor = .white
+            }
+        }
+    }
+    
     @objc private func backButtonTapped() {
         presenter?.playPrevious()
     }
