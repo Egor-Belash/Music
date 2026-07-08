@@ -102,11 +102,6 @@ extension PlaylistViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        70
-    }
-    
 }
 
 // MARK: – UITableViewDelegate
@@ -116,8 +111,13 @@ extension PlaylistViewController: UITableViewDelegate {
         
         presenter?.didTapSong(index: indexPath.row)
     }
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70
+    }
 }
 
+// MARK: – PlaylistViewProtocol
 extension PlaylistViewController: PlaylistViewProtocol {
     func showPlaylist(playlist: Playlist) {
         self.playlist = playlist

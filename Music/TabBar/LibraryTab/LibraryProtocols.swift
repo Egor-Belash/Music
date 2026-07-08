@@ -5,4 +5,15 @@
 //  Created by Egor on 07.07.2026.
 //
 
-import Foundation
+protocol LibraryViewProtocol: AnyObject {
+    func showLikedTracks(_ tracks: [Track])
+}
+
+protocol LibraryPresenterProtocol: AnyObject {
+    func viewDidLoad()
+    func didTapSong(at index: Int)
+}
+
+protocol LibraryRouterProtocol: AnyObject {
+    
+}

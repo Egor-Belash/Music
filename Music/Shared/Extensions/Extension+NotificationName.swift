@@ -10,4 +10,5 @@ import UIKit
 extension Notification.Name {
     static let playerTrackChanged = Notification.Name("playerTrackChanged")
     static let playerStateChanged = Notification.Name("playerStateChanged")
+    static let favouritesChanged = Notification.Name("favouritesChanged")
 }

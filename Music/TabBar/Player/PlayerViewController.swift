@@ -11,7 +11,6 @@ final class PlayerViewController: UIViewController {
     
     // MARK: – Properties
     var presenter: PlayerPresenterProtocol?
-    private var timer: Timer?
 
     // MARK: – Subviews
     private let topBar: TopPlayerView = {
@@ -79,7 +78,6 @@ final class PlayerViewController: UIViewController {
         stackView.spacing = 5
         stackView.alignment = .leading
         stackView.distribution = .fillEqually
-        stackView.backgroundColor = .systemBlue
         return stackView
     }()
     
@@ -90,7 +88,6 @@ final class PlayerViewController: UIViewController {
         stackView.spacing = 10
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.backgroundColor = .systemMint
         return stackView
     }()
     
@@ -166,12 +163,12 @@ final class PlayerViewController: UIViewController {
         setupSubviews()
         setupConstraints()
         setupNotifications()
-        updateUI()
+        presenter?.viewDidLoad()
     }
     
+    // MARK: – DEINIT
     deinit {
         NotificationCenter.default.removeObserver(self)
-        timer?.invalidate()
     }
     
     // MARK: – Layout
@@ -207,7 +204,6 @@ final class PlayerViewController: UIViewController {
         buttonsStackView.addArrangedSubview(pauseButton)
         buttonsStackView.addArrangedSubview(forwardButton)
         view.addSubview(buttonsStackView)
-        
     }
     
     private func setupConstraints() {
@@ -252,60 +248,18 @@ final class PlayerViewController: UIViewController {
         ])
     }
     
-    // MARK: – UI Updating
+    // MARK: – Notifications
     private func setupNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(trackChanged), name: .playerTrackChanged, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(stateChanged), name: .playerStateChanged, object: nil)
     }
-    
-    private func updateUI() {
-        guard let track = AudioPlayerManager.shared.currentTrack else { return }
-        
-        imageView.setImage(with: track.coverImage)
-        songTitleLabel.text = track.title
-        songArtistLabel.text = track.artist
-        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
-        
-        startTimer()
-        updateDurationLabel()
-        updateSlider()
-    }
-    
-    private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true) { [weak self] _ in
-            self?.updateDurationLabel()
-            self?.updateSlider()
-        }
-    }
-    
-    private func updateDurationLabel() {
-        let currentTime = AudioPlayerManager.shared.currentTime
-        let duration = AudioPlayerManager.shared.duration
-        
-        songDurationLeftLabel.text = String(format: "%d:%02d", Int(currentTime) / 60, Int(currentTime) % 60)
-        songDurationRightLabel.text = String(format: "%d:%02d", Int(duration) / 60, Int(duration) % 60)
-    }
-    
-    private func updateSlider() {
-        songSlider.minimumValue = 0
-        songSlider.maximumValue = Float(AudioPlayerManager.shared.duration)
-        songSlider.value = Float(AudioPlayerManager.shared.currentTime)
-    }
 
     // MARK: – Actions
     @objc private func likeButtonTapped() {
-        likeButton.isSelected.toggle()
+        presenter?.likeButtonTapped()
         
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
-        
-        UIView.animate(withDuration: 0.2) {
-            if self.likeButton.isSelected {
-                self.likeButton.tintColor = .greenColor2
-            } else {
-                self.likeButton.tintColor = .white
-            }
-        }
     }
     
     @objc private func backButtonTapped() {
@@ -314,7 +268,6 @@ final class PlayerViewController: UIViewController {
     
     @objc private func pauseButtonTapped() {
         presenter?.pause()
-        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
     }
     
     @objc private func forwardButtonTapped() {
@@ -322,19 +275,15 @@ final class PlayerViewController: UIViewController {
     }
     
     @objc private func sliderValueChanged(_ sender: UISlider) {
-        AudioPlayerManager.shared.seek(to: TimeInterval(sender.value))
+        presenter?.sliderValueChanged(value: TimeInterval(sender.value))
     }
     
     @objc private func trackChanged(_ notification: Notification) {
-        guard let track = notification.object as? Track else { return }
-
-        imageView.setImage(with: track.coverImage)
-        songTitleLabel.text = track.title
-        songArtistLabel.text = track.artist
+        presenter?.didChangeTrack()
     }
     
     @objc private func stateChanged() {
-        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
+        presenter?.didChangePlaybackState()
     }
 }
 
@@ -347,5 +296,29 @@ extension PlayerViewController: TopPlayerViewDelegate {
 
 // MARK: – PlayerViewProtocol
 extension PlayerViewController: PlayerViewProtocol {
+    func showTrack(track: Track) {
+        imageView.setImage(with: track.coverImage)
+        songTitleLabel.text = track.title
+        songArtistLabel.text = track.artist
+    }
     
+    func updateProgress(currentTime: TimeInterval, duration: TimeInterval) {
+        songDurationLeftLabel.text = String(format: "%d:%02d", Int(currentTime) / 60, Int(currentTime) % 60)
+        songDurationRightLabel.text = String(format: "%d:%02d", Int(duration) / 60, Int(duration) % 60)
+        
+        songSlider.maximumValue = Float(duration)
+        songSlider.value = Float(currentTime)
+    }
+    
+    func updatePauseButton(isPlaying: Bool) {
+        pauseButton.isSelected = isPlaying
+    }
+    
+    func updateLikeButton(isLiked: Bool) {
+        likeButton.isSelected = isLiked
+        
+        UIView.animate(withDuration: 0.2) {
+            self.likeButton.tintColor = isLiked ? .greenColor2 : .white
+        }
+    }
 }

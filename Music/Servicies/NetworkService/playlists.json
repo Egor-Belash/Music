@@ -37,8 +37,8 @@
     "tracks": [
       {
         "id": "1234",
-        "title": "",
-        "artist": "",
+        "title": "1",
+        "artist": "1",
         "coverImage": "",
         "albumCover": "",
         "songFileName": ""
