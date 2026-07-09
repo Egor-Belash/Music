@@ -20,6 +20,7 @@ final class MainTabBarPresenter: MainTabBarPresenterProtocol {
         guard let track = AudioPlayerManager.shared.currentTrack else { return }
 
         view?.showTrack(track: track)
+        view?.showMiniPlayer()
     }
     
     func pauseButtonTapped() {

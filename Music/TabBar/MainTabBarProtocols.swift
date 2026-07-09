@@ -10,6 +10,7 @@ import Foundation
 protocol MainTabBarViewProtocol: AnyObject {
     func updatePauseButton(isPlaying: Bool)
     func showTrack(track: Track)
+    func showMiniPlayer()
 }
 
 protocol MainTabBarPresenterProtocol: AnyObject {

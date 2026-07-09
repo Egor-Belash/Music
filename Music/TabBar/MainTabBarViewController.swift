@@ -16,6 +16,7 @@ final class MainTabBarViewController: UITabBarController {
     private let miniPlayerView: MiniPlayerView = {
         let mini = MiniPlayerView()
         mini.translatesAutoresizingMaskIntoConstraints = false
+        mini.isHidden = true
         return mini
     }()
     
@@ -89,6 +90,19 @@ extension MainTabBarViewController: MiniPlayerViewDelegate {
 
 // MARK: – MainTabBarViewProtocol
 extension MainTabBarViewController: MainTabBarViewProtocol {
+    func showMiniPlayer() {
+        guard miniPlayerView.isHidden else { return }
+        
+        miniPlayerView.transform = CGAffineTransform(translationX: view.bounds.width, y: 0).concatenating(CGAffineTransform(scaleX: 0.8, y: 0.8))
+        miniPlayerView.isHidden = false
+        miniPlayerView.alpha = 0
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.85, initialSpringVelocity: 0.5) {
+            self.miniPlayerView.transform = .identity
+            self.miniPlayerView.alpha = 1
+        }
+    }
+    
     func showTrack(track: Track) {
         miniPlayerView.showTrack(track: track)
     }
