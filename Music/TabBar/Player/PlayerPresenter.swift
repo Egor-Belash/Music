@@ -58,6 +58,10 @@ final class PlayerPresenter: PlayerPresenterProtocol {
         updatePlayerUI()
     }
     
+    func didTapExitButton() {
+        router?.closePlayer()
+    }
+    
     // MARK: – Privates
     private func updateProgress() {
         let currentTime = AudioPlayerManager.shared.currentTime

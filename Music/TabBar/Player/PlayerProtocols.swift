@@ -23,8 +23,9 @@ protocol PlayerPresenterProtocol: AnyObject {
     func sliderValueChanged(value: TimeInterval)
     func didChangePlaybackState()
     func didChangeTrack()
+    func didTapExitButton()
 }
 
 protocol PlayerRouterProtocol: AnyObject {
-    
+    func closePlayer()
 }

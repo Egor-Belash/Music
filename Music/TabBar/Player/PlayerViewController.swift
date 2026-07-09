@@ -290,7 +290,7 @@ final class PlayerViewController: UIViewController {
 // MARK: – TopPlayerViewDelegate
 extension PlayerViewController: TopPlayerViewDelegate {
     func didTapExitButton() {
-        dismiss(animated: true)
+        presenter?.didTapExitButton()
     }
 }
 

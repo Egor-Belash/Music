@@ -23,4 +23,9 @@ final class PlayerRouter: PlayerRouterProtocol {
         
         return vc
     }
+    
+    func closePlayer() {
+        viewController?.dismiss(animated: true)
+    }
+    
 }

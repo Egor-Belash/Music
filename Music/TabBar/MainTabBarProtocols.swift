@@ -14,9 +14,9 @@ protocol MainTabBarViewProtocol: AnyObject {
 
 protocol MainTabBarPresenterProtocol: AnyObject {
     func didChangePlaybackState()
+    func didChangeTrack()
     func pauseButtonTapped()
     func miniPlayerViewTapped()
-    func didChangeTrack()
 }
 
 protocol MainTabBarRouterProtocol: AnyObject {
