@@ -10,6 +10,8 @@ import UIKit
 protocol MiniPlayerViewDelegate: AnyObject {
     func miniPlayerViewDidTap()
     func pauseButtonTapped()
+    func didChangePlaybackState()
+    func didChangeTrack()
 }
 
 final class MiniPlayerView: TouchView {
@@ -140,7 +142,6 @@ final class MiniPlayerView: TouchView {
     // MARK: – Actions
     @objc private func pauseButtonTapped() {
         delegate?.pauseButtonTapped()
-        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
     }
     
     @objc private func miniPlayerTapped() {
@@ -148,14 +149,21 @@ final class MiniPlayerView: TouchView {
     }
     
     @objc private func trackChanged(_ notification: Notification) {
-        guard let track = notification.object as? Track else { return }
-
-        songImageView.setImage(with: track.coverImage)
-        songTitleLabel.text = track.title
-        songArtistLabel.text = track.artist
+        delegate?.didChangeTrack()
     }
     
     @objc private func stateChanged() {
-        pauseButton.isSelected = AudioPlayerManager.shared.isPlaying
+        delegate?.didChangePlaybackState()
+    }
+    
+    // MARK: – UI Updating
+    func updatePauseButton(isPlaying: Bool) {
+        pauseButton.isSelected = isPlaying
+    }
+    
+    func showTrack(track: Track) {
+        songImageView.setImage(with: track.coverImage)
+        songTitleLabel.text = track.title
+        songArtistLabel.text = track.artist
     }
 }

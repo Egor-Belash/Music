@@ -161,6 +161,7 @@ extension HomeViewController: HomeViewProtocol {
     
 }
 
+// MARK: – ErrorViewDelegate
 extension HomeViewController: ErrorViewDelegate {
     func reloadButtonTapped() {
         errorView.isHidden = true

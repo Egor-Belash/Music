@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //            } else {
 //                window?.rootViewController = LogInRouter.build()
 //            }
-            window?.rootViewController = MainTabBarViewController()
+            window?.rootViewController = MainTabBarRouter.build()
         } else {
             window?.rootViewController = OnBoardingRouter.build()
         }

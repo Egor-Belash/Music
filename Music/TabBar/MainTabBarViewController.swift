@@ -9,6 +9,9 @@ import UIKit
 
 final class MainTabBarViewController: UITabBarController {
     
+    // MARK: – Properties
+    var presenter: MainTabBarPresenterProtocol?
+    
     // MARK: – Subviews
     private let miniPlayerView: MiniPlayerView = {
         let mini = MiniPlayerView()
@@ -67,12 +70,30 @@ final class MainTabBarViewController: UITabBarController {
 
 // MARK: – MiniPlayerViewDelegate
 extension MainTabBarViewController: MiniPlayerViewDelegate {
+    func didChangeTrack() {
+        presenter?.didChangeTrack()
+    }
+    
+    func didChangePlaybackState() {
+        presenter?.didChangePlaybackState()
+    }
+    
     func pauseButtonTapped() {
-        AudioPlayerManager.shared.pause()
+        presenter?.pauseButtonTapped()
     }
     
     func miniPlayerViewDidTap() {
-        let vc = PlayerRouter.build()
-        present(vc, animated: true)
+        presenter?.miniPlayerViewTapped()
+    }
+}
+
+// MARK: – MainTabBarViewProtocol
+extension MainTabBarViewController: MainTabBarViewProtocol {
+    func showTrack(track: Track) {
+        miniPlayerView.showTrack(track: track)
+    }
+    
+    func updatePauseButton(isPlaying: Bool) {
+        miniPlayerView.updatePauseButton(isPlaying: isPlaying)
     }
 }
