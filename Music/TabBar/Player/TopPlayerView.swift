@@ -30,6 +30,7 @@ final class TopPlayerView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         label.textColor = .white
+        label.textAlignment = .center
         label.text = "Name of Playlist"
         return label
     }()
@@ -48,7 +49,7 @@ final class TopPlayerView: UIView {
         stackView.axis = .horizontal
         stackView.spacing = 16
         stackView.alignment = .center
-        stackView.distribution = .fillEqually
+        stackView.distribution = .fill
         return stackView
     }()
     
@@ -66,7 +67,7 @@ final class TopPlayerView: UIView {
     
     // MARK: – Layout
     private func setupViewProperties() {
-        backgroundColor = .black
+        backgroundColor = .clear
     }
     
     private func setupSubviews() {
@@ -81,8 +82,10 @@ final class TopPlayerView: UIView {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
-            buttonStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            buttonStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            buttonStackView.topAnchor.constraint(equalTo: topAnchor),
+            buttonStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            buttonStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            buttonStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
     
@@ -95,4 +98,8 @@ final class TopPlayerView: UIView {
         
     }
     
+    // MARK: – UI Updating
+    func updateAlbumName(with name: String) {
+        albumNameLabel.text = name
+    }
 }

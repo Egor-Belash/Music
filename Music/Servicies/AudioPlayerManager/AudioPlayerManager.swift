@@ -14,7 +14,7 @@ final class AudioPlayerManager: NSObject {
     
     // MARK: – Properties
     private var player: AVAudioPlayer?
-    private var currentPlaylist: Playlist?
+    private(set) var currentPlaylist: Playlist?
     private var currentIndex: Int = 0
     var currentTrack: Track? {
         guard let currentPlaylist,

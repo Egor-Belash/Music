@@ -11,6 +11,7 @@ protocol PlayerViewProtocol: AnyObject {
     func updatePauseButton(isPlaying: Bool)
     func updateLikeButton(isLiked: Bool)
     func updateProgress(currentTime: TimeInterval, duration: TimeInterval)
+    func updateAlbumName(name: String)
     func showTrack(track: Track)
 }
 

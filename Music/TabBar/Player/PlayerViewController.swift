@@ -296,6 +296,10 @@ extension PlayerViewController: TopPlayerViewDelegate {
 
 // MARK: – PlayerViewProtocol
 extension PlayerViewController: PlayerViewProtocol {
+    func updateAlbumName(name: String) {
+        topBar.updateAlbumName(with: name)
+    }
+    
     func showTrack(track: Track) {
         imageView.setImage(with: track.coverImage)
         songTitleLabel.text = track.title

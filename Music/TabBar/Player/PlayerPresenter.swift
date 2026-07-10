@@ -82,5 +82,6 @@ final class PlayerPresenter: PlayerPresenterProtocol {
         view?.showTrack(track: track)
         view?.updatePauseButton(isPlaying: AudioPlayerManager.shared.isPlaying)
         view?.updateLikeButton(isLiked: FavouritesManager.shared.isLiked(track: track))
+        view?.updateAlbumName(name: AudioPlayerManager.shared.currentPlaylist?.title ?? "")
     }
 }
