@@ -1,0 +1,304 @@
+[
+  {
+    "id": "1",
+    "title": "Eurovision 2026",
+    "coverImage": "eurovision-playlist-cover",
+    "tracks": [
+      {
+        "id": "1",
+        "title": "Bangaranga",
+        "artist": "DARA",
+        "coverImage": "bangarangaImage",
+        "albumCover": null,
+        "songFileName": "DaraBangaranga"
+      },
+      {
+        "id": "2",
+        "title": "Michelle",
+        "artist": "Noam Bettan",
+        "coverImage": "michelleImage",
+        "albumCover": null,
+        "songFileName": "NoamBettanMichelle"
+      },
+      {
+          "id": "3",
+          "title": "Choke me",
+          "artist": "Alexandra Capitanescu",
+          "coverImage": "chokeMeImage",
+          "albumCover": null,
+          "songFileName": "AlexandraCapitanescuChokeMe"
+      },
+      {
+        "id": "4",
+        "title": "Eclipse",
+        "artist": "Delta Goodrem",
+        "coverImage": "eclipseImage",
+        "albumCover": null,
+        "songFileName": "DeltaGoodremEclipse"
+      },
+      {
+        "id": "5",
+        "title": "Per sempre sì",
+        "artist": "Sal Da Vinci",
+        "coverImage": "perSempreSiImage",
+        "albumCover": null,
+        "songFileName": "SalDaVinciPerSempreSi"
+      },
+      {
+        "id": "6",
+        "title": "Liekinheitin",
+        "artist": "Linda Lampenius & Pete Parkkonen",
+        "coverImage": "liekinheitinImage",
+        "albumCover": null,
+        "songFileName": "LindaLampeniusPeteParkkonenLiekinheitin"
+      },
+      {
+        "id": "7",
+        "title": "Før Vi Går Hjem",
+        "artist": "Søren Torpegaard Lund",
+        "coverImage": "forViGarHjemImage",
+        "albumCover": null,
+        "songFileName": "SorenTorpegaardLundForViGarHjem"
+      },
+      {
+        "id": "8",
+        "title": "Viva, Moldova",
+        "artist": "Satoshi",
+        "coverImage": "vivaMoldovaImage",
+        "albumCover": null,
+        "songFileName": "SatoshiVivaMoldova"
+      },
+      {
+        "id": "9",
+        "title": "Ridnym",
+        "artist": "LELÉKA",
+        "coverImage": "ridnymImage",
+        "albumCover": null,
+        "songFileName": "LELEKARidnym"
+      },
+      {
+        "id": "10",
+        "title": "Ferto",
+        "artist": "Akylas",
+        "coverImage": "fertoImage",
+        "albumCover": null,
+        "songFileName": "AkylasFerto"
+      },
+      {
+        "id": "11",
+        "title": "Regarde!",
+        "artist": "Monroe",
+        "coverImage": "regardeImage",
+        "albumCover": null,
+        "songFileName": "MonroeRegarde"
+      },
+      {
+        "id": "12",
+        "title": "Pray",
+        "artist": "ALICJA",
+        "coverImage": "prayImage",
+        "albumCover": null,
+        "songFileName": "AlicjaPray"
+      },
+      {
+        "id": "13",
+        "title": "Nân",
+        "artist": "Alis",
+        "coverImage": "nanImage",
+        "albumCover": null,
+        "songFileName": "AlisNan"
+      },
+      {
+        "id": "14",
+        "title": "Ya ya ya",
+        "artist": "Jonas Lovv",
+        "coverImage": "yaYaYaImage",
+        "albumCover": null,
+        "songFileName": "JonasLovvYaYaYa"
+      },
+      {
+        "id": "15",
+        "title": "Andromeda",
+        "artist": "LELEK",
+        "coverImage": "andromedaImage",
+        "albumCover": null,
+        "songFileName": "LELEKAndromeda"
+      },
+      {
+        "id": "16",
+        "title": "Crossroads",
+        "artist": "Daniel Žižka",
+        "coverImage": "crossroadsImage",
+        "albumCover": null,
+        "songFileName": "DanielZizkaCrossroads"
+      },
+      {
+        "id": "17",
+        "title": "Kraj mene",
+        "artist": "Lavina",
+        "coverImage": "krajMeneImage",
+        "albumCover": null,
+        "songFileName": "LavinaKrajMene"
+      },
+      {
+        "id": "18",
+        "title": "Bella",
+        "artist": "AIDAN",
+        "coverImage": "bellaImage",
+        "albumCover": null,
+        "songFileName": "AIDANBella"
+      },
+      {
+        "id": "19",
+        "title": "JALLA",
+        "artist": "ANTIGONI",
+        "coverImage": "jallaImage",
+        "albumCover": null,
+        "songFileName": "ANTIGONIJalla"
+      },
+      {
+        "id": "20",
+        "title": "My System",
+        "artist": "FELICIA",
+        "coverImage": "mySystemImage",
+        "albumCover": null,
+        "songFileName": "FELICIAMySystem"
+      },
+      {
+        "id": "21",
+        "title": "Dancing on the ice",
+        "artist": "ESSYLA",
+        "coverImage": "dancingOnTheIceImage",
+        "albumCover": null,
+        "songFileName": "ESSYLADancingOnTheIce"
+      },
+      {
+        "id": "22",
+        "title": "Sólo quiero más",
+        "artist": "Lion Ceccah",
+        "coverImage": "soloQuieroMasImage",
+        "albumCover": null,
+        "songFileName": "LionCeccahSoloQuieroMas"
+      },
+      {
+        "id": "23",
+        "title": "Fire",
+        "artist": "Sarah Engels",
+        "coverImage": "fireImage",
+        "albumCover": null,
+        "songFileName": "SarahEngelsFire"
+      },
+      {
+        "id": "24",
+        "title": "Tanzschein",
+        "artist": "Cosmó",
+        "coverImage": "tanzscheinImage",
+        "albumCover": null,
+        "songFileName": "CosmoTanzschein"
+      },
+      {
+        "id": "25",
+        "title": "Eins, Zwei, Drei",
+        "artist": "LOOK MUM NO COMPUTER",
+        "coverImage": "einsZweiDreiImage",
+        "albumCover": null,
+        "songFileName": "LookMumNoComputerEinsZweiDrei"
+      },
+      {
+        "id": "26",
+        "title": "Alice",
+        "artist": "Veronica Fusaro",
+        "coverImage": "aliceImage",
+        "albumCover": null,
+        "songFileName": "VeronicaFusaroAlice"
+      },
+      {
+        "id": "27",
+        "title": "Superstar",
+        "artist": "Senhit feat. Boy George",
+        "coverImage": "superstarImage",
+        "albumCover": null,
+        "songFileName": "SenhitBoyGeorgeSuperstar"
+      },
+      {
+        "id": "28",
+        "title": "Too Epic to Be True",
+        "artist": "Vanilla Ninja",
+        "coverImage": "tooEpicToBeTrueImage",
+        "albumCover": null,
+        "songFileName": "VanillaNinjaTooEpicToBeTrue"
+      },
+      {
+        "id": "29",
+        "title": "Nova Zora",
+        "artist": "Tamara Živković",
+        "coverImage": "novaZoraImage",
+        "albumCover": null,
+        "songFileName": "TamaraZivkovicNovaZora"
+      },
+      {
+        "id": "30",
+        "title": "On Replay",
+        "artist": "Bzikebi",
+        "coverImage": "onReplayImage",
+        "albumCover": null,
+        "songFileName": "BzikebiOnReplay"
+      },
+      {
+        "id": "31",
+        "title": "Mother Nature",
+        "artist": "Eva Marija",
+        "coverImage": "motherNatureImage",
+        "albumCover": null,
+        "songFileName": "EvaMarijaMotherNature"
+      },
+      {
+        "id": "32",
+        "title": "Paloma Rumba",
+        "artist": "SIMÓN",
+        "coverImage": "palomaRumbaImage",
+        "albumCover": null,
+        "songFileName": "SIMONPalomaRumba"
+      },
+      {
+        "id": "33",
+        "title": "Rosa",
+        "artist": "Bandidos Do Cante",
+        "coverImage": "rosaImage",
+        "albumCover": null,
+        "songFileName": "BandidosDoCanteRosa"
+      },
+      {
+       "id": "34",
+        "title": "Ēnā",
+        "artist": "Atvara",
+        "coverImage": "enaImage",
+        "albumCover": null,
+        "songFileName": "AtvaraEna"
+      },
+      {
+        "id": "35",
+        "title": "Just Go",
+        "artist": "JIVA",
+        "coverImage": "justGoImage",
+        "albumCover": null,
+        "songFileName": "JIVAJustGo"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Måneskin",
+    "coverImage": "maneskinTeatroDira",
+    "tracks": [
+      {
+        "id": "36",
+        "title": "ZITTI E BUONI",
+        "artist": "Måneskin",
+        "coverImage": "maneskinZittiEBuoni",
+        "albumCover": "maneskinTeatroDira",
+        "songFileName": "ManeskinZittiEBuoni"
+      }
+    ]
+  }
+]

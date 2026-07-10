@@ -9,6 +9,39 @@
 /* Begin PBXBuildFile section */
 		744898722FE9A7F500CDED6D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 744898712FE9A7F500CDED6D /* Lottie */; };
 		747342D72FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 747342D62FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 */; };
+		7473E0F93001005E0037F0CA /* BzikebiOnReplay.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E0F83001005E0037F0CA /* BzikebiOnReplay.mp3 */; };
+		7473E0FB3001008D0037F0CA /* DeltaGoodremEclipse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E0FA3001008D0037F0CA /* DeltaGoodremEclipse.mp3 */; };
+		7473E0FD300100C40037F0CA /* MonroeRegarde.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E0FC300100C40037F0CA /* MonroeRegarde.mp3 */; };
+		7473E1063001013B0037F0CA /* SIMONPalomaRumba.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1053001013B0037F0CA /* SIMONPalomaRumba.mp3 */; };
+		7473E1073001013B0037F0CA /* JIVAJustGo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1013001013B0037F0CA /* JIVAJustGo.mp3 */; };
+		7473E1083001013B0037F0CA /* AlicjaPray.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E0FF3001013B0037F0CA /* AlicjaPray.mp3 */; };
+		7473E1093001013B0037F0CA /* LionCeccahSoloQuieroMas.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1023001013B0037F0CA /* LionCeccahSoloQuieroMas.mp3 */; };
+		7473E10A3001013B0037F0CA /* AkylasFerto.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E0FE3001013B0037F0CA /* AkylasFerto.mp3 */; };
+		7473E10B3001013B0037F0CA /* SarahEngelsFire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1043001013B0037F0CA /* SarahEngelsFire.mp3 */; };
+		7473E10C3001013B0037F0CA /* ESSYLADancingOnTheIce.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1003001013B0037F0CA /* ESSYLADancingOnTheIce.mp3 */; };
+		7473E10D3001013B0037F0CA /* LookMumNoComputerEinsZweiDrei.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1033001013B0037F0CA /* LookMumNoComputerEinsZweiDrei.mp3 */; };
+		7473E111300101750037F0CA /* JonasLovvYaYaYa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E110300101750037F0CA /* JonasLovvYaYaYa.mp3 */; };
+		7473E112300101750037F0CA /* FELICIAMySystem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E10F300101750037F0CA /* FELICIAMySystem.mp3 */; };
+		7473E113300101750037F0CA /* AlisNan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E10E300101750037F0CA /* AlisNan.mp3 */; };
+		7473E117300101C20037F0CA /* CosmoTanzschein.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E115300101C20037F0CA /* CosmoTanzschein.mp3 */; };
+		7473E118300101C20037F0CA /* VeronicaFusaroAlice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E116300101C20037F0CA /* VeronicaFusaroAlice.mp3 */; };
+		7473E119300101C20037F0CA /* BandidosDoCanteRosa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E114300101C20037F0CA /* BandidosDoCanteRosa.mp3 */; };
+		7473E11B3001022F0037F0CA /* SalDaVinciPerSempreSi.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E11A3001022F0037F0CA /* SalDaVinciPerSempreSi.mp3 */; };
+		7473E11D300102800037F0CA /* LindaLampeniusPeteParkkonenLiekinheitin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E11C300102800037F0CA /* LindaLampeniusPeteParkkonenLiekinheitin.mp3 */; };
+		7473E11F300102C00037F0CA /* SorenTorpegaardLundForViGarHjem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E11E300102C00037F0CA /* SorenTorpegaardLundForViGarHjem.mp3 */; };
+		7473E1213001030F0037F0CA /* SatoshiVivaMoldova.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1203001030F0037F0CA /* SatoshiVivaMoldova.mp3 */; };
+		7473E1233001033E0037F0CA /* LELEKARidnym.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1223001033E0037F0CA /* LELEKARidnym.mp3 */; };
+		7473E125300103C00037F0CA /* LELEKAndromeda.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E124300103C00037F0CA /* LELEKAndromeda.mp3 */; };
+		7473E127300104110037F0CA /* DanielZizkaCrossroads.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E126300104110037F0CA /* DanielZizkaCrossroads.mp3 */; };
+		7473E129300104660037F0CA /* LavinaKrajMene.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E128300104660037F0CA /* LavinaKrajMene.mp3 */; };
+		7473E12B300104B50037F0CA /* AIDANBella.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E12A300104B50037F0CA /* AIDANBella.mp3 */; };
+		7473E12D300104EC0037F0CA /* ANTIGONIJalla.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E12C300104EC0037F0CA /* ANTIGONIJalla.mp3 */; };
+		7473E12F300107770037F0CA /* SenhitBoyGeorgeSuperstar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E12E300107770037F0CA /* SenhitBoyGeorgeSuperstar.mp3 */; };
+		7473E131300107B10037F0CA /* VanillaNinjaTooEpicToBeTrue.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E130300107B10037F0CA /* VanillaNinjaTooEpicToBeTrue.mp3 */; };
+		7473E133300108FA0037F0CA /* TamaraZivkovicNovaZora.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E132300108FA0037F0CA /* TamaraZivkovicNovaZora.mp3 */; };
+		7473E135300109460037F0CA /* EvaMarijaMotherNature.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E134300109460037F0CA /* EvaMarijaMotherNature.mp3 */; };
+		7473E1373001099E0037F0CA /* AtvaraEna.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E1363001099E0037F0CA /* AtvaraEna.mp3 */; };
+		7473E139300116240037F0CA /* ManeskinZittiEBuoni.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7473E138300116240037F0CA /* ManeskinZittiEBuoni.mp3 */; };
 		7483D5433000C7C1000319E2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5423000C7C1000319E2 /* FirebaseAnalytics */; };
 		7483D5453000C7C1000319E2 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5443000C7C1000319E2 /* FirebaseAnalyticsCore */; };
 		7483D5473000C7C1000319E2 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5463000C7C1000319E2 /* FirebaseAnalyticsIdentitySupport */; };
@@ -24,15 +57,48 @@
 /* Begin PBXFileReference section */
 		744897D42FE9A62D00CDED6D /* Music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Music.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		747342D62FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlexandraCapitanescuChokeMe.mp3; sourceTree = "<group>"; };
+		7473E0F83001005E0037F0CA /* BzikebiOnReplay.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BzikebiOnReplay.mp3; sourceTree = "<group>"; };
+		7473E0FA3001008D0037F0CA /* DeltaGoodremEclipse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DeltaGoodremEclipse.mp3; sourceTree = "<group>"; };
+		7473E0FC300100C40037F0CA /* MonroeRegarde.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = MonroeRegarde.mp3; sourceTree = "<group>"; };
+		7473E0FE3001013B0037F0CA /* AkylasFerto.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AkylasFerto.mp3; sourceTree = "<group>"; };
+		7473E0FF3001013B0037F0CA /* AlicjaPray.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlicjaPray.mp3; sourceTree = "<group>"; };
+		7473E1003001013B0037F0CA /* ESSYLADancingOnTheIce.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ESSYLADancingOnTheIce.mp3; sourceTree = "<group>"; };
+		7473E1013001013B0037F0CA /* JIVAJustGo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = JIVAJustGo.mp3; sourceTree = "<group>"; };
+		7473E1023001013B0037F0CA /* LionCeccahSoloQuieroMas.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LionCeccahSoloQuieroMas.mp3; sourceTree = "<group>"; };
+		7473E1033001013B0037F0CA /* LookMumNoComputerEinsZweiDrei.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LookMumNoComputerEinsZweiDrei.mp3; sourceTree = "<group>"; };
+		7473E1043001013B0037F0CA /* SarahEngelsFire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SarahEngelsFire.mp3; sourceTree = "<group>"; };
+		7473E1053001013B0037F0CA /* SIMONPalomaRumba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SIMONPalomaRumba.mp3; sourceTree = "<group>"; };
+		7473E10E300101750037F0CA /* AlisNan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AlisNan.mp3; sourceTree = "<group>"; };
+		7473E10F300101750037F0CA /* FELICIAMySystem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = FELICIAMySystem.mp3; sourceTree = "<group>"; };
+		7473E110300101750037F0CA /* JonasLovvYaYaYa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = JonasLovvYaYaYa.mp3; sourceTree = "<group>"; };
+		7473E114300101C20037F0CA /* BandidosDoCanteRosa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BandidosDoCanteRosa.mp3; sourceTree = "<group>"; };
+		7473E115300101C20037F0CA /* CosmoTanzschein.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = CosmoTanzschein.mp3; sourceTree = "<group>"; };
+		7473E116300101C20037F0CA /* VeronicaFusaroAlice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VeronicaFusaroAlice.mp3; sourceTree = "<group>"; };
+		7473E11A3001022F0037F0CA /* SalDaVinciPerSempreSi.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SalDaVinciPerSempreSi.mp3; sourceTree = "<group>"; };
+		7473E11C300102800037F0CA /* LindaLampeniusPeteParkkonenLiekinheitin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LindaLampeniusPeteParkkonenLiekinheitin.mp3; sourceTree = "<group>"; };
+		7473E11E300102C00037F0CA /* SorenTorpegaardLundForViGarHjem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SorenTorpegaardLundForViGarHjem.mp3; sourceTree = "<group>"; };
+		7473E1203001030F0037F0CA /* SatoshiVivaMoldova.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SatoshiVivaMoldova.mp3; sourceTree = "<group>"; };
+		7473E1223001033E0037F0CA /* LELEKARidnym.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LELEKARidnym.mp3; sourceTree = "<group>"; };
+		7473E124300103C00037F0CA /* LELEKAndromeda.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LELEKAndromeda.mp3; sourceTree = "<group>"; };
+		7473E126300104110037F0CA /* DanielZizkaCrossroads.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DanielZizkaCrossroads.mp3; sourceTree = "<group>"; };
+		7473E128300104660037F0CA /* LavinaKrajMene.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = LavinaKrajMene.mp3; sourceTree = "<group>"; };
+		7473E12A300104B50037F0CA /* AIDANBella.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AIDANBella.mp3; sourceTree = "<group>"; };
+		7473E12C300104EC0037F0CA /* ANTIGONIJalla.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ANTIGONIJalla.mp3; sourceTree = "<group>"; };
+		7473E12E300107770037F0CA /* SenhitBoyGeorgeSuperstar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SenhitBoyGeorgeSuperstar.mp3; sourceTree = "<group>"; };
+		7473E130300107B10037F0CA /* VanillaNinjaTooEpicToBeTrue.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = VanillaNinjaTooEpicToBeTrue.mp3; sourceTree = "<group>"; };
+		7473E132300108FA0037F0CA /* TamaraZivkovicNovaZora.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = TamaraZivkovicNovaZora.mp3; sourceTree = "<group>"; };
+		7473E134300109460037F0CA /* EvaMarijaMotherNature.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = EvaMarijaMotherNature.mp3; sourceTree = "<group>"; };
+		7473E1363001099E0037F0CA /* AtvaraEna.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = AtvaraEna.mp3; sourceTree = "<group>"; };
+		7473E138300116240037F0CA /* ManeskinZittiEBuoni.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ManeskinZittiEBuoni.mp3; sourceTree = "<group>"; };
 		74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DaraBangaranga.mp3; sourceTree = "<group>"; };
 		74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NoamBettanMichelle.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		744897E62FE9A62E00CDED6D /* Exceptions for "Music" folder in "Music" target */ = {
+		74C56ED230016891003F19A3 /* Exceptions for "Music" folder in "Music" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				App/Info.plist,
 			);
 			target = 744897D32FE9A62D00CDED6D /* Music */;
 		};
@@ -42,7 +108,7 @@
 		744897D62FE9A62D00CDED6D /* Music */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				744897E62FE9A62E00CDED6D /* Exceptions for "Music" folder in "Music" target */,
+				74C56ED230016891003F19A3 /* Exceptions for "Music" folder in "Music" target */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -92,6 +158,39 @@
 				74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */,
 				74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */,
 				747342D62FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 */,
+				7473E0F83001005E0037F0CA /* BzikebiOnReplay.mp3 */,
+				7473E0FA3001008D0037F0CA /* DeltaGoodremEclipse.mp3 */,
+				7473E0FC300100C40037F0CA /* MonroeRegarde.mp3 */,
+				7473E0FE3001013B0037F0CA /* AkylasFerto.mp3 */,
+				7473E0FF3001013B0037F0CA /* AlicjaPray.mp3 */,
+				7473E1003001013B0037F0CA /* ESSYLADancingOnTheIce.mp3 */,
+				7473E1013001013B0037F0CA /* JIVAJustGo.mp3 */,
+				7473E1023001013B0037F0CA /* LionCeccahSoloQuieroMas.mp3 */,
+				7473E1033001013B0037F0CA /* LookMumNoComputerEinsZweiDrei.mp3 */,
+				7473E1043001013B0037F0CA /* SarahEngelsFire.mp3 */,
+				7473E1053001013B0037F0CA /* SIMONPalomaRumba.mp3 */,
+				7473E10E300101750037F0CA /* AlisNan.mp3 */,
+				7473E10F300101750037F0CA /* FELICIAMySystem.mp3 */,
+				7473E110300101750037F0CA /* JonasLovvYaYaYa.mp3 */,
+				7473E114300101C20037F0CA /* BandidosDoCanteRosa.mp3 */,
+				7473E115300101C20037F0CA /* CosmoTanzschein.mp3 */,
+				7473E116300101C20037F0CA /* VeronicaFusaroAlice.mp3 */,
+				7473E11A3001022F0037F0CA /* SalDaVinciPerSempreSi.mp3 */,
+				7473E11C300102800037F0CA /* LindaLampeniusPeteParkkonenLiekinheitin.mp3 */,
+				7473E11E300102C00037F0CA /* SorenTorpegaardLundForViGarHjem.mp3 */,
+				7473E1203001030F0037F0CA /* SatoshiVivaMoldova.mp3 */,
+				7473E1223001033E0037F0CA /* LELEKARidnym.mp3 */,
+				7473E124300103C00037F0CA /* LELEKAndromeda.mp3 */,
+				7473E126300104110037F0CA /* DanielZizkaCrossroads.mp3 */,
+				7473E128300104660037F0CA /* LavinaKrajMene.mp3 */,
+				7473E12A300104B50037F0CA /* AIDANBella.mp3 */,
+				7473E12C300104EC0037F0CA /* ANTIGONIJalla.mp3 */,
+				7473E12E300107770037F0CA /* SenhitBoyGeorgeSuperstar.mp3 */,
+				7473E130300107B10037F0CA /* VanillaNinjaTooEpicToBeTrue.mp3 */,
+				7473E132300108FA0037F0CA /* TamaraZivkovicNovaZora.mp3 */,
+				7473E134300109460037F0CA /* EvaMarijaMotherNature.mp3 */,
+				7473E1363001099E0037F0CA /* AtvaraEna.mp3 */,
+				7473E138300116240037F0CA /* ManeskinZittiEBuoni.mp3 */,
 			);
 			path = Songs;
 			sourceTree = "<group>";
@@ -176,9 +275,42 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7473E1063001013B0037F0CA /* SIMONPalomaRumba.mp3 in Resources */,
+				7473E139300116240037F0CA /* ManeskinZittiEBuoni.mp3 in Resources */,
+				7473E1073001013B0037F0CA /* JIVAJustGo.mp3 in Resources */,
+				7473E1083001013B0037F0CA /* AlicjaPray.mp3 in Resources */,
+				7473E133300108FA0037F0CA /* TamaraZivkovicNovaZora.mp3 in Resources */,
+				7473E1093001013B0037F0CA /* LionCeccahSoloQuieroMas.mp3 in Resources */,
+				7473E12D300104EC0037F0CA /* ANTIGONIJalla.mp3 in Resources */,
+				7473E131300107B10037F0CA /* VanillaNinjaTooEpicToBeTrue.mp3 in Resources */,
+				7473E10A3001013B0037F0CA /* AkylasFerto.mp3 in Resources */,
+				7473E10B3001013B0037F0CA /* SarahEngelsFire.mp3 in Resources */,
+				7473E1233001033E0037F0CA /* LELEKARidnym.mp3 in Resources */,
+				7473E10C3001013B0037F0CA /* ESSYLADancingOnTheIce.mp3 in Resources */,
+				7473E1213001030F0037F0CA /* SatoshiVivaMoldova.mp3 in Resources */,
+				7473E10D3001013B0037F0CA /* LookMumNoComputerEinsZweiDrei.mp3 in Resources */,
 				74CCD2652FF983C60005C0C6 /* NoamBettanMichelle.mp3 in Resources */,
 				74CCD2372FF91CF90005C0C6 /* DaraBangaranga.mp3 in Resources */,
+				7473E111300101750037F0CA /* JonasLovvYaYaYa.mp3 in Resources */,
+				7473E127300104110037F0CA /* DanielZizkaCrossroads.mp3 in Resources */,
+				7473E112300101750037F0CA /* FELICIAMySystem.mp3 in Resources */,
+				7473E113300101750037F0CA /* AlisNan.mp3 in Resources */,
 				747342D72FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 in Resources */,
+				7473E0F93001005E0037F0CA /* BzikebiOnReplay.mp3 in Resources */,
+				7473E0FB3001008D0037F0CA /* DeltaGoodremEclipse.mp3 in Resources */,
+				7473E1373001099E0037F0CA /* AtvaraEna.mp3 in Resources */,
+				7473E125300103C00037F0CA /* LELEKAndromeda.mp3 in Resources */,
+				7473E0FD300100C40037F0CA /* MonroeRegarde.mp3 in Resources */,
+				7473E12B300104B50037F0CA /* AIDANBella.mp3 in Resources */,
+				7473E11D300102800037F0CA /* LindaLampeniusPeteParkkonenLiekinheitin.mp3 in Resources */,
+				7473E129300104660037F0CA /* LavinaKrajMene.mp3 in Resources */,
+				7473E117300101C20037F0CA /* CosmoTanzschein.mp3 in Resources */,
+				7473E12F300107770037F0CA /* SenhitBoyGeorgeSuperstar.mp3 in Resources */,
+				7473E118300101C20037F0CA /* VeronicaFusaroAlice.mp3 in Resources */,
+				7473E119300101C20037F0CA /* BandidosDoCanteRosa.mp3 in Resources */,
+				7473E11B3001022F0037F0CA /* SalDaVinciPerSempreSi.mp3 in Resources */,
+				7473E11F300102C00037F0CA /* SorenTorpegaardLundForViGarHjem.mp3 in Resources */,
+				7473E135300109460037F0CA /* EvaMarijaMotherNature.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,7 +384,7 @@
 				DEVELOPMENT_TEAM = NHXPFMPDFR;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Music/Info.plist;
+				INFOPLIST_FILE = Music/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -284,7 +416,7 @@
 				DEVELOPMENT_TEAM = NHXPFMPDFR;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Music/Info.plist;
+				INFOPLIST_FILE = Music/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
