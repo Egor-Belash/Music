@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		744898722FE9A7F500CDED6D /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 744898712FE9A7F500CDED6D /* Lottie */; };
 		747342D72FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 747342D62FFA5365005C1CFA /* AlexandraCapitanescuChokeMe.mp3 */; };
+		7483D5433000C7C1000319E2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5423000C7C1000319E2 /* FirebaseAnalytics */; };
+		7483D5453000C7C1000319E2 /* FirebaseAnalyticsCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5443000C7C1000319E2 /* FirebaseAnalyticsCore */; };
+		7483D5473000C7C1000319E2 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5463000C7C1000319E2 /* FirebaseAnalyticsIdentitySupport */; };
+		7483D5493000C7C1000319E2 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5483000C7C1000319E2 /* FirebaseAppCheck */; };
+		7483D54D3000C7C1000319E2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D54C3000C7C1000319E2 /* FirebaseAuth */; };
+		7483D54F3000C7C1000319E2 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D54E3000C7C1000319E2 /* FirebaseAuthCombine-Community */; };
+		7483D5513000C7C1000319E2 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5503000C7C1000319E2 /* FirebaseCore */; };
+		7483D5533000C7C1000319E2 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5523000C7C1000319E2 /* FirebaseCrashlytics */; };
 		74CCD2372FF91CF90005C0C6 /* DaraBangaranga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */; };
 		74CCD2652FF983C60005C0C6 /* NoamBettanMichelle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */; };
 /* End PBXBuildFile section */
@@ -47,6 +55,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				744898722FE9A7F500CDED6D /* Lottie in Frameworks */,
+				7483D5513000C7C1000319E2 /* FirebaseCore in Frameworks */,
+				7483D5473000C7C1000319E2 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
+				7483D5453000C7C1000319E2 /* FirebaseAnalyticsCore in Frameworks */,
+				7483D54D3000C7C1000319E2 /* FirebaseAuth in Frameworks */,
+				7483D5493000C7C1000319E2 /* FirebaseAppCheck in Frameworks */,
+				7483D5433000C7C1000319E2 /* FirebaseAnalytics in Frameworks */,
+				7483D5533000C7C1000319E2 /* FirebaseCrashlytics in Frameworks */,
+				7483D54F3000C7C1000319E2 /* FirebaseAuthCombine-Community in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +106,7 @@
 				744897D02FE9A62D00CDED6D /* Sources */,
 				744897D12FE9A62D00CDED6D /* Frameworks */,
 				744897D22FE9A62D00CDED6D /* Resources */,
+				7483D56E3000CA97000319E2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -101,6 +118,14 @@
 			name = Music;
 			packageProductDependencies = (
 				744898712FE9A7F500CDED6D /* Lottie */,
+				7483D5423000C7C1000319E2 /* FirebaseAnalytics */,
+				7483D5443000C7C1000319E2 /* FirebaseAnalyticsCore */,
+				7483D5463000C7C1000319E2 /* FirebaseAnalyticsIdentitySupport */,
+				7483D5483000C7C1000319E2 /* FirebaseAppCheck */,
+				7483D54C3000C7C1000319E2 /* FirebaseAuth */,
+				7483D54E3000C7C1000319E2 /* FirebaseAuthCombine-Community */,
+				7483D5503000C7C1000319E2 /* FirebaseCore */,
+				7483D5523000C7C1000319E2 /* FirebaseCrashlytics */,
 			);
 			productName = Music;
 			productReference = 744897D42FE9A62D00CDED6D /* Music.app */;
@@ -132,6 +157,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				744898702FE9A7F500CDED6D /* XCRemoteSwiftPackageReference "lottie-spm" */,
+				7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 744897D52FE9A62D00CDED6D /* Products */;
@@ -156,6 +182,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7483D56E3000CA97000319E2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		744897D02FE9A62D00CDED6D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -174,13 +226,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NHXPFMPDFR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Music/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -205,13 +257,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = NHXPFMPDFR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Music/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -382,6 +434,14 @@
 				minimumVersion = 4.6.1;
 			};
 		};
+		7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.16.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -389,6 +449,46 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 744898702FE9A7F500CDED6D /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
+		};
+		7483D5423000C7C1000319E2 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		7483D5443000C7C1000319E2 /* FirebaseAnalyticsCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsCore;
+		};
+		7483D5463000C7C1000319E2 /* FirebaseAnalyticsIdentitySupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsIdentitySupport;
+		};
+		7483D5483000C7C1000319E2 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		7483D54C3000C7C1000319E2 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		7483D54E3000C7C1000319E2 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		7483D5503000C7C1000319E2 /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		7483D5523000C7C1000319E2 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
