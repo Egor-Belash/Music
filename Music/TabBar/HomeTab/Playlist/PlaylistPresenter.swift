@@ -28,5 +28,4 @@ final class PlaylistPresenter: PlaylistPresenterProtocol {
         AudioPlayerManager.shared.play(playlist: playlist, startIndex: index)
     }
     
-    
 }

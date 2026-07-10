@@ -121,4 +121,3 @@ final class PlaylistTableCell: UITableViewCell {
         songImageView.setImage(with: track.coverImage)
     }
 }
-

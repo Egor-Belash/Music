@@ -30,7 +30,6 @@ final class PlaylistCell: UICollectionViewCell {
         return label
     }()
     
-    
     // MARK: – INIT
     override init(frame: CGRect) {
         super.init(frame: frame)

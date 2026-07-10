@@ -14,7 +14,6 @@ final class HomePresenter: HomePresenterProtocol {
     var router: HomeRouterProtocol?
     private var playlists: [Playlist] = []
     
-    
     // MARK: – Functions
     func viewDidLoad() {
         view?.showLoading()
