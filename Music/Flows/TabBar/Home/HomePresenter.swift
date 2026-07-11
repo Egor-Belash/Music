@@ -36,7 +36,7 @@ final class HomePresenter: HomePresenterProtocol {
                     self?.playlists = playlists
                     self?.view?.showPlaylists(playlists: playlists)
                 case .failure(let error):
-                    self?.view?.showError(message: "Failed to fetch data:\n\(error.localizedDescription)")
+                    self?.view?.showError()
                 }
             }
         }

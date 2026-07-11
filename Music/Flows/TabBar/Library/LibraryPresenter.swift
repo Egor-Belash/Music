@@ -12,12 +12,7 @@ final class LibraryPresenter: LibraryPresenterProtocol {
     // MARK: – Properties
     weak var view: LibraryViewProtocol?
     var router: LibraryRouterProtocol?
-    private var likedPlaylist: Playlist
-    
-    // MARK: – INIT
-    init() {
-        self.likedPlaylist = Playlist(id: "0000", title: "Liked Songs", coverImage: nil, tracks: [])
-    }
+    private var likedPlaylist: Playlist = Playlist(id: "0000", title: String(localized: .likedSongs), coverImage: nil, tracks: [])
     
     // MARK: – DEINIT
     deinit {
@@ -53,7 +48,7 @@ final class LibraryPresenter: LibraryPresenterProtocol {
     private func showLikedTracks() {
         let tracks = FavouritesManager.shared.likedTracks
         
-        likedPlaylist = Playlist(id: "0000", title: "Liked Songs", coverImage: nil, tracks: tracks)
+        likedPlaylist = Playlist(id: "0000", title: String(localized: .likedSongs), coverImage: nil, tracks: tracks)
         
         view?.showLikedTracks(tracks)
     }

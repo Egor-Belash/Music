@@ -22,10 +22,8 @@ final class OnBoardingRouter: OnBoardingRouterProtocol {
     }
     
     func openLogInViewController() {
-        // Showing onboarding once
         UserDefaults.standard.set(true, forKey: "onboardingIsDone")
         
-        // Go to the LogInVC
         let vc = MainTabBarViewController()
         
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

@@ -20,7 +20,7 @@ final class ErrorView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Something went wrong"
+        label.text = String(localized: .somethingWentWrong)
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textColor = .label
         return label
@@ -29,7 +29,7 @@ final class ErrorView: UIView {
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Please try again"
+        label.text = String(localized: .pleaseTryAgain)
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textColor = .black
         return label
@@ -38,7 +38,7 @@ final class ErrorView: UIView {
     private let retryButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Reload", for: .normal)
+        button.setTitle(String(localized: .reload), for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .greenColor2
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)

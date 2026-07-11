@@ -14,17 +14,17 @@ final class OnBoardingViewController: UIViewController {
     var router: OnBoardingRouterProtocol?
     private let slides = [
         CellModel(
-            mainTitle: "Добро пожаловать в Music!",
+            mainTitle: String(localized: .welcomeToMusic),
             animationName: "GirlListeningToMusic",
-            title: "Лучший музыкальный сервис",
-            buttonTitle: "Далее",
+            title: String(localized: .theBestMusicService),
+            buttonTitle: String(localized: .next),
             buttonColor: UIColor(named: "greenColor2")!
         ),
         CellModel(
-            mainTitle: "Ваш проводник в мир музыки",
+            mainTitle: String(localized: .yourGuideToTheWorldsOfMusic),
             animationName: "CrazyBottleRocker",
-            title: "Слушайте миллионы хитов со всего мира",
-            buttonTitle: "Начать",
+            title: String(localized: .listenToMillionsOfHits),
+            buttonTitle: String(localized: .start),
             buttonColor: UIColor(named: "greenColor2")!
         ),
     ]
@@ -59,12 +59,6 @@ final class OnBoardingViewController: UIViewController {
         setupViewProperties()
         setupSubviews()
         setupConstraints()
-        
-        overrideUserInterfaceStyle = .light
-    }
-
-    deinit {
-        print("OndoardingVC is deinit")
     }
     
     // MARK: – Layout
@@ -84,7 +78,6 @@ final class OnBoardingViewController: UIViewController {
         
         view.addSubview(collectionView)
         view.addSubview(pageControl)
-        
     }
     
     private func setupConstraints() {

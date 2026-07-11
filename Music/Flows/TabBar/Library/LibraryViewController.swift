@@ -41,7 +41,7 @@ final class LibraryViewController: UIViewController {
         tableView.delegate = self
         tableView.register(PlaylistTableCell.self, forCellReuseIdentifier: PlaylistTableCell.reuseIdentifier)
         
-        navigationItem.title = "Liked Songs"
+        navigationItem.title = String(localized: .likedSongs)
         navigationItem.largeTitleDisplayMode = .always
     }
     

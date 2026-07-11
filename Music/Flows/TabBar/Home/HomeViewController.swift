@@ -67,7 +67,7 @@ final class HomeViewController: UIViewController {
         view.addSubview(errorView)
         errorView.delegate = self
         
-        navigationItem.title = "Home"
+        navigationItem.title = String(localized: .home)
         navigationItem.largeTitleDisplayMode = .always
         
     }
@@ -154,8 +154,7 @@ extension HomeViewController: HomeViewProtocol {
         collectionView.reloadData()
     }
     
-    func showError(message: String) {
-        print(message)
+    func showError() {
         errorView.isHidden = false
     }
     

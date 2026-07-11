@@ -36,13 +36,13 @@ final class MainTabBarViewController: UITabBarController {
         let libraryNav = UINavigationController(rootViewController: libraryVC)
         
         homeVCNav.tabBarItem = UITabBarItem(
-            title: "Home",
+            title: String(localized: .home),
             image: UIImage(systemName: "house"),
             selectedImage: UIImage(systemName: "house.fill")
         )
         
         libraryNav.tabBarItem = UITabBarItem(
-            title: "Library",
+            title: String(localized: .library),
             image: UIImage(systemName: "music.note.square.stack"),
             selectedImage: UIImage(systemName: "music.note.square.stack.fill")
         )

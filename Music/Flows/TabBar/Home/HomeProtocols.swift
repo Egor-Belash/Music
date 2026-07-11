@@ -7,7 +7,7 @@
 
 protocol HomeViewProtocol: AnyObject {
     func showPlaylists(playlists: [Playlist])
-    func showError(message: String)
+    func showError()
     func showLoading()
     func hideLoading()
 }
