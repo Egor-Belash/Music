@@ -21,10 +21,10 @@ final class OnBoardingRouter: OnBoardingRouterProtocol {
         return vc
     }
     
-    func openLogInViewController() {
+    func openTabBarViewController() {
         UserDefaults.standard.set(true, forKey: "onboardingIsDone")
         
-        let vc = MainTabBarViewController()
+        let vc = MainTabBarRouter.build()
         
         guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
               let sceneDelegate = windowScene.delegate as? SceneDelegate,
