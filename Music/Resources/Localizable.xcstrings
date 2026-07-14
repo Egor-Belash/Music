@@ -7,7 +7,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Please, fill all required fields"
+            "value" : "Please fill all required fields"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста, заполните обязательные поля"
           }
         }
       }
@@ -19,6 +25,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Error"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибка"
           }
         }
       }
@@ -99,6 +111,12 @@
             "state" : "translated",
             "value" : "Log in"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Логин"
+          }
         }
       }
     },
@@ -109,6 +127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Please enter your username and password"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пожалуйста,"
           }
         }
       }
@@ -121,6 +145,12 @@
             "state" : "translated",
             "value" : "Incorrect login or password"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неверный логин или пароль"
+          }
         }
       }
     },
@@ -132,6 +162,12 @@
             "state" : "translated",
             "value" : "Incorrect password"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неправильный пароль"
+          }
         }
       }
     },
@@ -142,6 +178,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "User is not registered"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Такой пользователь не зарегистрирован"
           }
         }
       }
@@ -205,6 +247,12 @@
             "state" : "translated",
             "value" : "Select your date of birth"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Укажите вашу дату рожения"
+          }
         }
       }
     },
@@ -216,6 +264,12 @@
             "state" : "translated",
             "value" : "Enter your email address"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Укажите ваш электронный адрес"
+          }
         }
       }
     },
@@ -223,6 +277,12 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "abcdefgh@gmail.com"
+          }
+        },
+        "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "abcdefgh@gmail.com"
@@ -238,6 +298,12 @@
             "state" : "translated",
             "value" : "Enter Login"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите логин"
+          }
         }
       }
     },
@@ -248,6 +314,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enter Password"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите пароль"
           }
         }
       }
@@ -260,6 +332,12 @@
             "state" : "translated",
             "value" : "Come up with login"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Придумайте логин"
+          }
         }
       }
     },
@@ -270,6 +348,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Your Login"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваш логин"
           }
         }
       }
@@ -282,6 +366,12 @@
             "state" : "translated",
             "value" : "Enter your name"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите ваше имя"
+          }
         }
       }
     },
@@ -292,6 +382,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Name"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Имя"
           }
         }
       }
@@ -304,6 +400,12 @@
             "state" : "translated",
             "value" : "Create a strong password"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Придумайте надёжный пароль"
+          }
         }
       }
     },
@@ -314,6 +416,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Passwords do not match"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароли должны совпадать"
           }
         }
       }
@@ -326,6 +434,12 @@
             "state" : "translated",
             "value" : "Password"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пароль"
+          }
         }
       }
     },
@@ -337,6 +451,12 @@
             "state" : "translated",
             "value" : "Enter your mobile phone number"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите ваш номер телефона"
+          }
         }
       }
     },
@@ -344,6 +464,12 @@
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "+1234567890"
+          }
+        },
+        "ru" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "+1234567890"
@@ -359,6 +485,12 @@
             "state" : "translated",
             "value" : "Confirm your password"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подтвердите пароль"
+          }
         }
       }
     },
@@ -370,6 +502,12 @@
             "state" : "translated",
             "value" : "You are not registered?😱"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вы ещё не зарегистрированы?😱"
+          }
         }
       }
     },
@@ -380,6 +518,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Username is already taken"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пользователь с таким логином уже существует"
           }
         }
       }
@@ -409,6 +553,12 @@
             "state" : "translated",
             "value" : "Save"
           }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить"
+          }
         }
       }
     },
@@ -419,6 +569,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sign Up"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зарегистрироваться"
           }
         }
       }

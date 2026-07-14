@@ -22,7 +22,7 @@ final class LogInRouter: LogInRouterProtocol {
               let window = scene.windows.first else
         { return }
         
-        window.rootViewController = MainTabBarViewController()
+        window.rootViewController = MainTabBarRouter.build()
         
         UIView.transition(
             with: window,
