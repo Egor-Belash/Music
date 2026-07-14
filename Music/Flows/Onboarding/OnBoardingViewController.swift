@@ -146,7 +146,7 @@ extension OnBoardingViewController: OnBoardingCellDelegate {
             collectionView.scrollToItem(at: IndexPath(item: nextIndex, section: 0), at: .centeredHorizontally, animated: true)
             pageControl.currentPage = nextIndex
         } else {
-            router?.openTabBarViewController()
+            router?.openLogInViewController()
         }
     }
 }

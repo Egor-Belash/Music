@@ -1,0 +1,118 @@
+//
+//  LogInViewController.swift
+//  Music
+//
+//  Created by Egor on 14.07.2026.
+//
+
+import UIKit
+
+final class LogInViewController: UIViewController {
+    
+    // MARK: – Properties
+    var presenter: LogInPresenterProtocol?
+    
+    // MARK: – Subviews
+    private let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.image = UIImage(named: "imageBackground1")
+        imageView.contentMode = .scaleAspectFill
+        return imageView
+    }()
+    
+    private let label: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Music"
+        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.textColor = .white
+        label.layer.shadowColor = UIColor.black.cgColor
+        label.layer.shadowOffset = CGSize(width: 0, height: 3)
+        label.layer.shadowOpacity = 0.3
+        return label
+    }()
+    
+    private let logInView: LogInView = {
+        let view = LogInView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    // MARK: – Lifecycles
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupViewProperties()
+        setupSubviews()
+        setupConstraints()
+        
+        setupGestures()
+        
+        overrideUserInterfaceStyle = .light
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        logInView.cleanTextFields()
+    }
+    
+    // MARK: – Layout
+    private func setupViewProperties() {
+        view.backgroundColor = .systemBackground
+    }
+    
+    private func setupSubviews() {
+        logInView.delegate = self
+        
+        view.addSubview(imageView)
+        view.addSubview(label)
+        view.addSubview(logInView)
+    }
+    
+    private func setupConstraints() {
+        NSLayoutConstraint.activate([
+            imageView.topAnchor.constraint(equalTo: view.topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            logInView.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 50),
+            logInView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            logInView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            logInView.heightAnchor.constraint(equalToConstant: 400),
+        ])
+    }
+    
+    // MARK: – Actions
+    private func setupGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func hideKeyboard() {
+        view.endEditing(true)
+    }
+
+}
+
+// MARK: – LogInViewDelegate
+extension LogInViewController: LogInViewDelegate {
+    
+    func loginButtonTaped(login: String, password: String) {
+        presenter?.loginButtonTapped(login, password)
+    }
+    
+    func registrationButtonTaped() {
+        presenter?.registrationButtonTapped()
+    }
+    
+}
+
+// MARK: – LogInViewProtocol
+extension LogInViewController: LogInViewProtocol {
+    func showError(title: String, message: String) {
+        showSimpleAlert(title: title, message: message)
+    }
+}

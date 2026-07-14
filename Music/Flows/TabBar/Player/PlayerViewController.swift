@@ -308,7 +308,7 @@ final class PlayerViewController: UIViewController {
             view.layer.insertSublayer(gradientLayer, at: 0)
             self.gradientLayer = gradientLayer
         }
-                
+        
         gradientLayer?.colors = [color.cgColor, UIColor.black.cgColor]
     }
 }

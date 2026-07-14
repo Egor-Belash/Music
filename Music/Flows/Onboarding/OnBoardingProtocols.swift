@@ -8,5 +8,5 @@
 import Foundation
 
 protocol OnBoardingRouterProtocol: AnyObject {
-    func openTabBarViewController()
+    func openLogInViewController()
 }

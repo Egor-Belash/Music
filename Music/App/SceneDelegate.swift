@@ -19,9 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         
         let onBoardingIsDone = UserDefaults.standard.bool(forKey: "onboardingIsDone")
+        let isLoggedIn = UserDefaults.standard.bool(forKey: "isLoggedIn")
         
         if onBoardingIsDone {
-            window?.rootViewController = MainTabBarRouter.build()
+            if isLoggedIn {
+                window?.rootViewController = MainTabBarRouter.build()
+            } else {
+                window?.rootViewController = LogInRouter.build()
+            }
         } else {
             window?.rootViewController = OnBoardingRouter.build()
         }

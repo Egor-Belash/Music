@@ -124,6 +124,9 @@ extension PlaylistViewController: PlaylistViewProtocol {
         self.playlist = playlist
         
         playlistImageView.setImage(with: playlist.coverImage)
+        
+        let color = UIImage.dominantColor(from: playlist.coverImage)
+        view.backgroundColor = color
     }
     
 }
