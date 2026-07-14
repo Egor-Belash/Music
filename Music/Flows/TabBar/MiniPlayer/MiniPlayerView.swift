@@ -165,5 +165,8 @@ final class MiniPlayerView: TouchView {
         songImageView.setImage(with: track.coverImage)
         songTitleLabel.text = track.title
         songArtistLabel.text = track.artist
+        
+        let color = UIImage.dominantColor(from: track.coverImage)
+        backgroundColor = color
     }
 }

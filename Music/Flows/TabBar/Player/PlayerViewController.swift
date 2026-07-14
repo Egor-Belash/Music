@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import ColorThiefSwift
 
 final class PlayerViewController: UIViewController {
     
     // MARK: – Properties
     var presenter: PlayerPresenterProtocol?
+    private var gradientLayer: CAGradientLayer?
 
     // MARK: – Subviews
     private let topBar: TopPlayerView = {
@@ -290,6 +292,25 @@ final class PlayerViewController: UIViewController {
     @objc private func stateChanged() {
         presenter?.didChangePlaybackState()
     }
+    
+    private func setupGradientLayer(with color: UIColor?) {
+        
+        guard let color else {
+            view.backgroundColor = .black
+            return
+        }
+        
+        if gradientLayer == nil {
+            let gradientLayer = CAGradientLayer()
+            gradientLayer.frame = view.bounds
+            gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
+            gradientLayer.endPoint = CGPoint(x: 0.5, y: 1.1)
+            view.layer.insertSublayer(gradientLayer, at: 0)
+            self.gradientLayer = gradientLayer
+        }
+                
+        gradientLayer?.colors = [color.cgColor, UIColor.black.cgColor]
+    }
 }
 
 // MARK: – TopPlayerViewDelegate
@@ -310,6 +331,9 @@ extension PlayerViewController: PlayerViewProtocol {
         songTitleLabel.text = track.title
         songArtistLabel.text = track.artist
         albumImageView.setImage(with: track.albumCover)
+            
+        let color = UIImage.dominantColor(from: track.coverImage)
+        setupGradientLayer(with: color)
     }
     
     func updateProgress(currentTime: TimeInterval, duration: TimeInterval) {

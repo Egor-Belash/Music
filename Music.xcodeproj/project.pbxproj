@@ -50,6 +50,7 @@
 		7483D54F3000C7C1000319E2 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D54E3000C7C1000319E2 /* FirebaseAuthCombine-Community */; };
 		7483D5513000C7C1000319E2 /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5503000C7C1000319E2 /* FirebaseCore */; };
 		7483D5533000C7C1000319E2 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7483D5523000C7C1000319E2 /* FirebaseCrashlytics */; };
+		7496A2B630063A5400C97BE6 /* ColorThiefSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7496A2B530063A5400C97BE6 /* ColorThiefSwift */; };
 		74CCD2372FF91CF90005C0C6 /* DaraBangaranga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */; };
 		74CCD2652FF983C60005C0C6 /* NoamBettanMichelle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */; };
 /* End PBXBuildFile section */
@@ -123,6 +124,7 @@
 				744898722FE9A7F500CDED6D /* Lottie in Frameworks */,
 				7483D5513000C7C1000319E2 /* FirebaseCore in Frameworks */,
 				7483D5473000C7C1000319E2 /* FirebaseAnalyticsIdentitySupport in Frameworks */,
+				7496A2B630063A5400C97BE6 /* ColorThiefSwift in Frameworks */,
 				7483D5453000C7C1000319E2 /* FirebaseAnalyticsCore in Frameworks */,
 				7483D54D3000C7C1000319E2 /* FirebaseAuth in Frameworks */,
 				7483D5493000C7C1000319E2 /* FirebaseAppCheck in Frameworks */,
@@ -226,6 +228,7 @@
 				7483D54E3000C7C1000319E2 /* FirebaseAuthCombine-Community */,
 				7483D5503000C7C1000319E2 /* FirebaseCore */,
 				7483D5523000C7C1000319E2 /* FirebaseCrashlytics */,
+				7496A2B530063A5400C97BE6 /* ColorThiefSwift */,
 			);
 			productName = Music;
 			productReference = 744897D42FE9A62D00CDED6D /* Music.app */;
@@ -260,6 +263,7 @@
 				744898702FE9A7F500CDED6D /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7483D5713000EC2F000319E2 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				7496A2B430063A5400C97BE6 /* XCRemoteSwiftPackageReference "ColorThiefSwift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 744897D52FE9A62D00CDED6D /* Products */;
@@ -611,6 +615,14 @@
 				minimumVersion = 0.65.0;
 			};
 		};
+		7496A2B430063A5400C97BE6 /* XCRemoteSwiftPackageReference "ColorThiefSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yamoridon/ColorThiefSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -658,6 +670,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7483D53D3000C7C1000319E2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
+		};
+		7496A2B530063A5400C97BE6 /* ColorThiefSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7496A2B430063A5400C97BE6 /* XCRemoteSwiftPackageReference "ColorThiefSwift" */;
+			productName = ColorThiefSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

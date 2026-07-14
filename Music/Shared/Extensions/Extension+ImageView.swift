@@ -9,7 +9,7 @@ import UIKit
 
 extension UIImageView {
     func setImage(with imageName: String?) {
-        guard let imageName else { // ne pustoi imageName
+        guard let imageName else {
             image = UIImage(systemName: "music.note")
             return
         }
