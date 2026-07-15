@@ -14,6 +14,11 @@ final class AvatarButton: UIButton {
         super.init(frame: frame)
         setupButton()
         updateAvatar()
+        setupNotifications()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     required init?(coder: NSCoder) {
@@ -40,5 +45,14 @@ final class AvatarButton: UIButton {
             setImage(UIImage(systemName: "person.crop.circle.fill"), for: .normal)
             contentMode = .scaleAspectFill
         }
+    }
+    
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangedAvatar), name: .avatarChanged, object: nil)
+    }
+    
+    // MARK: – Actions
+    @objc private func didChangedAvatar() {
+        updateAvatar()
     }
 }

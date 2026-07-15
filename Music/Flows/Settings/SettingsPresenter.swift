@@ -21,6 +21,9 @@ final class SettingsPresenter: SettingsPresenterProtocol {
     
     func didSelectImage(data: Data) {
         UserManager.shared.saveAvatar(data)
+        
+        NotificationCenter.default.post(name: .avatarChanged, object: nil)
+        
         view?.updateAvatar()
     }
     
