@@ -29,4 +29,10 @@ final class HomeRouter: HomeRouterProtocol {
         viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func openSettings() {
+        let vc = SettingsRouter.build()
+        vc.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

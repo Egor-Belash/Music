@@ -14,6 +14,8 @@ final class LibraryViewController: UIViewController {
     private var likedTracks: [Track] = []
 
     // MARK: – Subviews
+    private let avatarButton = AvatarButton()
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -27,6 +29,7 @@ final class LibraryViewController: UIViewController {
         setupViewProperties()
         setupSubviews()
         setupConstraints()
+        setupNavigationBar()
         presenter?.viewDidLoad()
     }
     
@@ -40,9 +43,14 @@ final class LibraryViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(PlaylistTableCell.self, forCellReuseIdentifier: PlaylistTableCell.reuseIdentifier)
-        
+    }
+    
+    private func setupNavigationBar() {
         navigationItem.title = String(localized: .likedSongs)
         navigationItem.largeTitleDisplayMode = .always
+        
+        avatarButton.addTarget(self, action: #selector(settingsTapped), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: avatarButton)
     }
     
     private func setupConstraints() {
@@ -52,6 +60,11 @@ final class LibraryViewController: UIViewController {
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+    }
+    
+    // MARK: – Actions
+    @objc private func settingsTapped() {
+        presenter?.settingsTapped()
     }
     
 }

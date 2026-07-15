@@ -24,6 +24,10 @@ final class HomePresenter: HomePresenterProtocol {
         router?.openPlaylist(playlist)
     }
     
+    func settingsTapped() {
+        router?.openSettings()
+    }
+    
     // MARK: – Privates
     func fetchPlaylists() {
         NetworkService.shared.fetchPlaylists { [weak self] result in

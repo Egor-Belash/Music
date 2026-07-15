@@ -29,6 +29,10 @@ final class LibraryPresenter: LibraryPresenterProtocol {
         AudioPlayerManager.shared.play(playlist: likedPlaylist, startIndex: index)
     }
     
+    func settingsTapped() {
+        router?.openSettings()
+    }
+    
     // MARK: – Notifications
     private func setupNotifications() {
         NotificationCenter.default.addObserver(

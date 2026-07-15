@@ -14,6 +14,8 @@ final class HomeViewController: UIViewController {
     var presenter: HomePresenterProtocol?
     
     // MARK: – Subviews
+    private let avatarButton = AvatarButton()
+    
     private let layout: UICollectionViewLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -47,6 +49,7 @@ final class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupViewProperties()
         setupSubviews()
+        setupNavigationBar()
         setupConstraints()
         
         presenter?.viewDidLoad()
@@ -66,10 +69,14 @@ final class HomeViewController: UIViewController {
         view.addSubview(loadingView)
         view.addSubview(errorView)
         errorView.delegate = self
-        
+    }
+    
+    private func setupNavigationBar() {
         navigationItem.title = String(localized: .home)
         navigationItem.largeTitleDisplayMode = .always
         
+        avatarButton.addTarget(self, action: #selector(settingsTapped), for: .touchUpInside)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: avatarButton)
     }
     
     private func setupConstraints() {
@@ -87,6 +94,11 @@ final class HomeViewController: UIViewController {
             errorView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             errorView.heightAnchor.constraint(equalTo: errorView.widthAnchor, multiplier: 0.43),
         ])
+    }
+    
+    // MARK: – Actions
+    @objc private func settingsTapped() {
+        presenter?.settingsTapped()
     }
     
 }

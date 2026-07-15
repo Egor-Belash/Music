@@ -12,8 +12,9 @@ protocol LibraryViewProtocol: AnyObject {
 protocol LibraryPresenterProtocol: AnyObject {
     func viewDidLoad()
     func didTapSong(at index: Int)
+    func settingsTapped()
 }
 
 protocol LibraryRouterProtocol: AnyObject {
-    
+    func openSettings()
 }

@@ -24,4 +24,10 @@ final class LibraryRouter: LibraryRouterProtocol {
         return vc
     }
     
+    func openSettings() {
+        let vc = SettingsRouter.build()
+        vc.hidesBottomBarWhenPushed = true
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }
