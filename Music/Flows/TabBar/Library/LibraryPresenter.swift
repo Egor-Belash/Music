@@ -41,11 +41,29 @@ final class LibraryPresenter: LibraryPresenterProtocol {
             name: .favouritesChanged,
             object: nil
         )
+
+        NotificationCenter.default.addObserver(
+            self, 
+            selector: #selector(trackChanged), 
+            name: .playerTrackChanged, 
+            object: nil
+        )
+
+        NotificationCenter.default.addObserver(
+            self, 
+            selector: #selector(trackChanged),
+            name: .playerStateChanged,
+            object: nil
+        )
     }
     
     // MARK: – Actions
     @objc private func favouritesChanged() {
         showLikedTracks()
+    }
+
+    @objc private func trackChanged() {
+        view?.updatePlayingTrack(track: AudioPlayerManager.shared.currentTrack, isPlaying: AudioPlayerManager.shared.isPlaying)
     }
     
     // MARK: – Privates

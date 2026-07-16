@@ -7,6 +7,7 @@
 
 protocol LibraryViewProtocol: AnyObject {
     func showLikedTracks(_ tracks: [Track])
+    func updatePlayingTrack(track: Track?, isPlaying: Bool)
 }
 
 protocol LibraryPresenterProtocol: AnyObject {

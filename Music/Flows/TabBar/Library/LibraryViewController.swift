@@ -12,6 +12,8 @@ final class LibraryViewController: UIViewController {
     // MARK: – Properties
     var presenter: LibraryPresenterProtocol?
     private var likedTracks: [Track] = []
+    private var playingTrack: Track?
+    private var isPlaying = false
 
     // MARK: – Subviews
     private let avatarButton = AvatarButton()
@@ -86,6 +88,10 @@ extension LibraryViewController: UITableViewDataSource {
         let track = likedTracks[indexPath.row]
         
         cell.configure(with: track)
+
+        let isCurrentTrack = track.id == playingTrack?.id && isPlaying
+
+        cell.updatePlayerState(isPlaying: isCurrentTrack)
         
         return cell
     }
@@ -108,6 +114,13 @@ extension LibraryViewController: UITableViewDelegate {
 extension LibraryViewController: LibraryViewProtocol {
     func showLikedTracks(_ tracks: [Track]) {
         self.likedTracks = tracks
+        tableView.reloadData()
+    }
+
+    func updatePlayingTrack(track: Track?, isPlaying: Bool) {
+        self.playingTrack = track
+        self.isPlaying = isPlaying
+
         tableView.reloadData()
     }
 }
