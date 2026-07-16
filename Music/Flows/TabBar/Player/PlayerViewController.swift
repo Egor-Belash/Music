@@ -330,33 +330,25 @@ extension PlayerViewController: PlayerViewProtocol {
         imageView.setImage(with: track.coverImage)
         songTitleLabel.text = track.title
         songArtistLabel.text = track.artist
-        // albumImageView.setImage(with: track.albumCover)
             
         let color = UIImage.dominantColor(from: track.coverImage)
         setupGradientLayer(with: color)
 
-        if let imageName {
-            albumImageView.setImage(with: track.albumCover)
+        if let albumCover = track.albumCover {
+            albumImageView.setImage(with: albumCover)
 
-            albumImageView.isHidden = false
-            albumImageView.alpha = 0
-            albumImageView.transform = CGAffineTransform(translationX: -20, y: 0).scaledBy(x: 0.7, y: 0.7)
+            if albumImageView.isHidden {
+                albumImageView.isHidden = false
+                albumImageView.alpha = 0
+                albumImageView.transform = CGAffineTransform(translationX: -40, y: 0).scaledBy(x: 0.8, y: 0.8)
 
-            UIView.animate(withDuration: 0.3) {
-                self.albumImageView.alpha = 1
-                self.albumImageView.transform = .identity
-                self.titleHStackView.layoutIfNeeded()
+                UIView.animate(withDuration: 0.3) {
+                    self.albumImageView.alpha = 1
+                    self.albumImageView.transform = .identity
+                }
             }
-
         } else {
-            UIView.animate(withDuration: 0.3) {
-                self.albumImageView.alpha = 0
-                self.albumImageView.transform = CGAffineTransform(translationX: -20, y: 0).scaledBy(x: 0.7, y: 0.7)
-                self.titleHStackView.layoutIfNeeded()
-            } completion: { _ in
-                self.albumImageView.isHidden = true
-                self.albumImageView.transform = .identity
-            }
+            albumImageView.isHidden = true
         }
     }
     

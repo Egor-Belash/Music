@@ -103,7 +103,7 @@ extension PlaylistViewController: UITableViewDataSource {
         
         cell.configure(with: track)
 
-        let isCurrentTrack = track == playingTrack && isPlaying
+        let isCurrentTrack = track.id == playingTrack?.id && isPlaying
 
         cell.updatePlayerState(isPlaying: isCurrentTrack)
         

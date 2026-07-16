@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 final class PlaylistTableCell: UITableViewCell {
     
@@ -59,7 +60,7 @@ final class PlaylistTableCell: UITableViewCell {
     }()
 
     private let animationView: LottieAnimationView = {
-        let lottieView = LottieAnimationView(name: )
+        let lottieView = LottieAnimationView(name: "MusicPlay")
         lottieView.translatesAutoresizingMaskIntoConstraints = false
         lottieView.contentMode = .scaleAspectFit
         lottieView.loopMode = .loop
@@ -124,6 +125,8 @@ final class PlaylistTableCell: UITableViewCell {
             titleHStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             titleHStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5),
             
+            animationView.widthAnchor.constraint(equalToConstant: 40),
+            animationView.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
