@@ -57,6 +57,15 @@ final class PlaylistTableCell: UITableViewCell {
         stackView.distribution = .fillEqually
         return stackView
     }()
+
+    private let animationView: LottieAnimationView = {
+        let lottieView = LottieAnimationView(name: )
+        lottieView.translatesAutoresizingMaskIntoConstraints = false
+        lottieView.contentMode = .scaleAspectFit
+        lottieView.loopMode = .loop
+        lottieView.isHidden = true
+        return lottieView
+    }()
     
     private let titleHStackView: UIStackView = {
         let stackView = UIStackView()
@@ -64,7 +73,7 @@ final class PlaylistTableCell: UITableViewCell {
         stackView.axis = .horizontal
         stackView.spacing = 10
         stackView.alignment = .fill
-        stackView.distribution = .fillProportionally
+        stackView.distribution = .fill
         return stackView
     }()
 
@@ -85,6 +94,9 @@ final class PlaylistTableCell: UITableViewCell {
         songImageView.image = nil
         songTitleLabel.text = nil
         songArtistLabel.text = nil
+
+        animationView.stop()
+        animationView.isHidden = true
     }
     
     // MARK: – Layout
@@ -98,6 +110,7 @@ final class PlaylistTableCell: UITableViewCell {
         
         titleHStackView.addArrangedSubview(songImageView)
         titleHStackView.addArrangedSubview(titleVStackView)
+        titleHStackView.addArrangedSubview(animationView)
         contentView.addSubview(titleHStackView)
     }
     
@@ -118,7 +131,19 @@ final class PlaylistTableCell: UITableViewCell {
     func configure(with track: Track) {
         songTitleLabel.text = track.title
         songArtistLabel.text = track.artist
-        
         songImageView.setImage(with: track.coverImage)
+
+        animationView.stop()
+        animationView.isHidden = true
+    }
+
+    func updatePlayerState(isPlaying: Bool) {
+        animationView.isHidden = !isPlaying
+
+        if isPlaying {
+            animationView.play()
+        } else {
+            animationView.stop()
+        }
     }
 }

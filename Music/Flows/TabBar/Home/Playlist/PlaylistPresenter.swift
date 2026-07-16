@@ -22,10 +22,20 @@ final class PlaylistPresenter: PlaylistPresenterProtocol {
     // MARK: – Functions
     func viewDidLoad() {
         view?.showPlaylist(playlist: playlist)
+        setupNotifications()
     }
     
     func didTapSong(index: Int) {
         AudioPlayerManager.shared.play(playlist: playlist, startIndex: index)
     }
-    
+
+    // MARK: – Privates
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(trackChanged), name: .playerTrackChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(trackChanged), name: .playerStateChanged, object: nil)
+    }
+
+    @objc private func trackChanged() {
+        view?.updatePlayingTrack(track: AudioPlayerManager.shared.currentTrack, isPlaying: AudioPlayerManager.shared.isPlaying)
+    }
 }

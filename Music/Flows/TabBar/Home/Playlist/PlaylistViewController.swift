@@ -12,6 +12,8 @@ final class PlaylistViewController: UIViewController {
     // MARK: – Properties
     private var playlist: Playlist?
     var presenter: PlaylistPresenterProtocol?
+    private var playingTrack: Track?
+    private var isPlaying = false
 
     // MARK: – Subviews
     private let playlistImageView: UIImageView = {
@@ -100,6 +102,10 @@ extension PlaylistViewController: UITableViewDataSource {
         }
         
         cell.configure(with: track)
+
+        let isCurrentTrack = track == playingTrack && isPlaying
+
+        cell.updatePlayerState(isPlaying: isCurrentTrack)
         
         return cell
     }
@@ -127,6 +133,13 @@ extension PlaylistViewController: PlaylistViewProtocol {
         
         let color = UIImage.dominantColor(from: playlist.coverImage)
         view.backgroundColor = color
+    }
+
+    func updatePlayingTrack(track: Track?, isPlaying: Bool) {
+        self.playingTrack = track
+        self.isPlaying = isPlaying
+
+        tableView.reloadData()
     }
     
 }

@@ -7,6 +7,7 @@
 
 protocol PlaylistViewProtocol: AnyObject {
     func showPlaylist(playlist: Playlist)
+    func updatePlayingTrack(track: Track?, isPlaying: Bool)
 }
 
 protocol PlaylistPresenterProtocol: AnyObject {
