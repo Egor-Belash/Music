@@ -53,6 +53,7 @@
 		7496A2B630063A5400C97BE6 /* ColorThiefSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7496A2B530063A5400C97BE6 /* ColorThiefSwift */; };
 		74CCD2372FF91CF90005C0C6 /* DaraBangaranga.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */; };
 		74CCD2652FF983C60005C0C6 /* NoamBettanMichelle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */; };
+		74FFCBD030092BD70020E50D /* maneskinCoraline.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 74FFCBCF30092BD70020E50D /* maneskinCoraline.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		7473E138300116240037F0CA /* ManeskinZittiEBuoni.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ManeskinZittiEBuoni.mp3; sourceTree = "<group>"; };
 		74CCD2362FF91CF90005C0C6 /* DaraBangaranga.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = DaraBangaranga.mp3; sourceTree = "<group>"; };
 		74CCD2642FF983C60005C0C6 /* NoamBettanMichelle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NoamBettanMichelle.mp3; sourceTree = "<group>"; };
+		74FFCBCF30092BD70020E50D /* maneskinCoraline.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = maneskinCoraline.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -193,6 +195,7 @@
 				7473E134300109460037F0CA /* EvaMarijaMotherNature.mp3 */,
 				7473E1363001099E0037F0CA /* AtvaraEna.mp3 */,
 				7473E138300116240037F0CA /* ManeskinZittiEBuoni.mp3 */,
+				74FFCBCF30092BD70020E50D /* maneskinCoraline.mp3 */,
 			);
 			path = Songs;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			files = (
 				7473E1063001013B0037F0CA /* SIMONPalomaRumba.mp3 in Resources */,
 				7473E139300116240037F0CA /* ManeskinZittiEBuoni.mp3 in Resources */,
+				74FFCBD030092BD70020E50D /* maneskinCoraline.mp3 in Resources */,
 				7473E1073001013B0037F0CA /* JIVAJustGo.mp3 in Resources */,
 				7473E1083001013B0037F0CA /* AlicjaPray.mp3 in Resources */,
 				7473E133300108FA0037F0CA /* TamaraZivkovicNovaZora.mp3 in Resources */,

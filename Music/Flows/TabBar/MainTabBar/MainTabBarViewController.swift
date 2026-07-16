@@ -55,6 +55,10 @@ final class MainTabBarViewController: UITabBarController {
         selectedIndex = 0
     }
     
+    func setMiniPlayerHidden(_ hidden: Bool) {
+        miniPlayerView.isHidden = hidden
+    }
+    
     private func setupMiniPlayer() {
         view.addSubview(miniPlayerView)
         NSLayoutConstraint.activate([

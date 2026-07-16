@@ -298,7 +298,15 @@
         "coverImage": "maneskinZittiEBuoni",
         "albumCover": "maneskinTeatroDira",
         "songFileName": "ManeskinZittiEBuoni"
-      }
+      },
+      {
+        "id": "37",
+        "title": "Coraline",
+        "artist": "Måneskin",
+        "coverImage": "maneskinTeatroDira",
+        "albumCover": null,
+        "songFileName": "maneskinCoraline"
+      },
     ]
   }
 ]

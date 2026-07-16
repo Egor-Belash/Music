@@ -58,6 +58,22 @@ final class SettingsViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let tabBar = tabBarController as? MainTabBarViewController {
+            tabBar.setMiniPlayerHidden(true)
+        }
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        if let tabBar = tabBarController as? MainTabBarViewController {
+            tabBar.setMiniPlayerHidden(false)
+        }
+    }
+    
     // MARK: – Layout
     private func setupViewProperties() {
         view.backgroundColor = .magenta.withAlphaComponent(0.1)
