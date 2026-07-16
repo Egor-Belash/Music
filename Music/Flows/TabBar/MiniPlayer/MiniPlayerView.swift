@@ -12,6 +12,7 @@ protocol MiniPlayerViewDelegate: AnyObject {
     func pauseButtonTapped()
     func didChangePlaybackState()
     func didChangeTrack()
+    func sliderValueChanged(value: TimeInterval)
 }
 
 final class MiniPlayerView: TouchView {
@@ -82,6 +83,16 @@ final class MiniPlayerView: TouchView {
         return stackView
     }()
     
+    private let songSlider: UISlider = {
+        let slider = UISlider()
+        slider.translatesAutoresizingMaskIntoConstraints = false
+        slider.minimumValue = 0
+        slider.sliderStyle = .thumbless
+        slider.isUserInteractionEnabled = false
+        slider.tintColor = .white
+        return slider
+    }()
+    
     // MARK: – INIT
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -100,6 +111,7 @@ final class MiniPlayerView: TouchView {
     private func setupViewProperties() {
         backgroundColor = .orange
         layer.cornerRadius = 10
+        clipsToBounds = true
     }
     
     private func setupSubviews() {
@@ -110,7 +122,10 @@ final class MiniPlayerView: TouchView {
         HStackView.addArrangedSubview(VStackView)
         HStackView.addArrangedSubview(pauseButton)
         pauseButton.addTarget(self, action: #selector(pauseButtonTapped), for: .touchUpInside)
+        songSlider.addTarget(self, action: #selector(sliderValueChanged), for: .valueChanged)
+        
         addSubview(HStackView)
+        addSubview(songSlider)
     }
     
     private func setupConstraints() {
@@ -122,6 +137,10 @@ final class MiniPlayerView: TouchView {
             HStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
             HStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -15),
             HStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            
+            songSlider.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 5),
+            songSlider.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
+            songSlider.centerYAnchor.constraint(equalTo: bottomAnchor, constant: 1)
         ])
     }
     
@@ -156,6 +175,10 @@ final class MiniPlayerView: TouchView {
         delegate?.didChangePlaybackState()
     }
     
+    @objc private func sliderValueChanged(_ sender: UISlider) {
+        delegate?.sliderValueChanged(value: TimeInterval(sender.value))
+    }
+    
     // MARK: – UI Updating
     func updatePauseButton(isPlaying: Bool) {
         pauseButton.isSelected = isPlaying
@@ -168,5 +191,10 @@ final class MiniPlayerView: TouchView {
         
         let color = UIImage.dominantColor(from: track.coverImage)
         backgroundColor = color
+    }
+    
+    func updateProgress(currentTime: TimeInterval, duration: TimeInterval) {
+        songSlider.maximumValue = Float(duration)
+        songSlider.value = Float(currentTime)
     }
 }

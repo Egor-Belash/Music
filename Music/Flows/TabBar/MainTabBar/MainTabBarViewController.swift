@@ -75,6 +75,10 @@ final class MainTabBarViewController: UITabBarController {
 
 // MARK: – MiniPlayerViewDelegate
 extension MainTabBarViewController: MiniPlayerViewDelegate {
+    func sliderValueChanged(value: TimeInterval) {
+        presenter?.sliderValueChanged(value: value)
+    }
+    
     func didChangeTrack() {
         presenter?.didChangeTrack()
     }
@@ -94,6 +98,10 @@ extension MainTabBarViewController: MiniPlayerViewDelegate {
 
 // MARK: – MainTabBarViewProtocol
 extension MainTabBarViewController: MainTabBarViewProtocol {
+    func updateProgress(currentTime: TimeInterval, duration: TimeInterval) {
+        miniPlayerView.updateProgress(currentTime: currentTime, duration: duration)
+    }
+    
     func showMiniPlayer() {
         guard miniPlayerView.isHidden else { return }
         

@@ -11,6 +11,7 @@ protocol MainTabBarViewProtocol: AnyObject {
     func updatePauseButton(isPlaying: Bool)
     func showTrack(track: Track)
     func showMiniPlayer()
+    func updateProgress(currentTime: TimeInterval, duration: TimeInterval)
 }
 
 protocol MainTabBarPresenterProtocol: AnyObject {
@@ -18,6 +19,7 @@ protocol MainTabBarPresenterProtocol: AnyObject {
     func didChangeTrack()
     func pauseButtonTapped()
     func miniPlayerViewTapped()
+    func sliderValueChanged(value: TimeInterval)
 }
 
 protocol MainTabBarRouterProtocol: AnyObject {
